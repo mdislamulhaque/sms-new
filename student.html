@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <img src="https://dummyimage.com/40x40/0d6efd/ffffff&text=O" />
+          <span class="logo-text">Omar Kindergarten</span>
+
+          <!-- MOBILE CLOSE BUTTON -->
+          <button id="closeSidebar" class="btn btn-sm btn-light sidebar-close">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+
+        <ul class="menu">
+          <li class="active">
+            <a href="/dashboard.html"
+              ><i class="ri-home-4-line"></i><span>Home</span></a
+            >
+          </li>
+
+          <!-- ===== HR ===== -->
+          <li class="has-sub">
+            <a href="#">
+              <i class="ri-team-line"></i>
+              <span>HR</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </a>
+
+            <ul class="submenu">
+              <li><a href="/student.html">Students</a></li>
+              <li><a href="#">Employees</a></li>
+
+              <!-- HR → Payroll (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Payroll</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Salary Sheet</a></li>
+                  <li><a href="#">Generate Salary</a></li>
+                  <li><a href="#">Payslip</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Attendance</a></li>
+              <li><a href="#">Leave Applications</a></li>
+              <li><a href="#">ID Cards</a></li>
+            </ul>
+          </li>
+
+          <!-- ===== Academics ===== -->
+          <li class="has-sub">
+            <a href="#">
+              <i class="ri-book-2-line"></i>
+              <span>Academics</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </a>
+
+            <ul class="submenu">
+              <li><a href="#">Classes 1</a></li>
+              <li><a href="#">Students 2</a></li>
+
+              <!-- Academics → Examination (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Examination 3</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Subjects 4</a></li>
+              <li><a href="#">Teachers 5</a></li>
+              <li><a href="#">Classes 6</a></li>
+              <li><a href="#">Students 7</a></li>
+
+              <!-- Academics → Examination (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Examination 8</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Subjects 9</a></li>
+              <li><a href="#">Teachers 10</a></li>
+              <li><a href="#">Classes 11</a></li>
+              <li><a href="#">Students 12</a></li>
+
+              <!-- Academics → Examination (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Examination 13</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Subjects 14</a></li>
+              <li><a href="#">Teachers 15</a></li>
+              <li><a href="#">Classes 16</a></li>
+              <li><a href="#">Students 17</a></li>
+
+              <!-- Academics → Examination (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Examination 18</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Subjects 19</a></li>
+              <li><a href="#">Teachers 20</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="ri-wallet-3-line"></i><span>Accounts</span></a
+            >
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="ri-store-2-line"></i><span>Inventory</span></a
+            >
+          </li>
+
+          <li>
+            <a href="#"><i class="ri-message-2-line"></i><span>SMS</span></a>
+          </li>
+
+          <li class="has-sub">
+            <a href="#">
+              <i class="ri-file-text-line"></i>
+              <span>Documents</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </a>
+            <ul class="submenu">
+              <li><a href="#">Attestations</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Transfer Certificates</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="ri-settings-3-line"></i><span>System Setup</span></a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Collapsed sidebar submenu container -->
+      <div
+        id="collapsedSubmenuContainer"
+        class="collapsed-submenu-container"
+      ></div>
+
+      <!-- Overlay -->
+      <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+
+      <!-- MAIN -->
+      <div class="" id="content">
+        <!-- TOPBAR -->
+        <header class="topbar">
+          <button id="toggleSidebar" class="btn btn-light">
+            <i class="ri-menu-line"></i>
+          </button>
+
+          <input class="form-control search" placeholder="Search..." />
+
+          <div class="topbar-right">
+            <i class="ri-notification-3-line"></i>
+            <span class="badge bg-danger">9,941/=</span>
+
+            <!-- PROFILE WRAPPER -->
+            <div class="profile-wrapper">
+              <img
+                src="/assets/images/profile.png"
+                class="avatar"
+                id="profileToggle"
+              />
+
+              <!-- PROFILE DROPDOWN -->
+              <div class="profile-dropdown" id="profileDropdown">
+                <div class="profile-info">
+                  <img src="/assets/images/profile.png" />
+                  <div>
+                    <strong>Omar Abdul Aziz Talukder</strong>
+                    <small>ID : 91149</small>
+                  </div>
+                </div>
+
+                <ul>
+                  <li><i class="ri-user-3-line"></i> Profile</li>
+                  <li><i class="ri-lock-line"></i> Change Password</li>
+                  <li><i class="ri-tools-line"></i> Troubleshooting</li>
+                  <li><i class="ri-information-line"></i> About</li>
+                </ul>
+
+                <div class="logout">
+                  <i class="ri-logout-box-r-line"></i>
+                  <a href="index.html">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+          <div class="container-fluid py-3">
+            <!-- NOTICE / ALERT -->
+            <div
+              class="alert alert-danger border border-danger-subtle rounded-3 mb-4"
+            >
+              <strong>দৃষ্টি আকর্ষণ:</strong>
+              সম্মানিত গ্রাহক, এক্সিম ব্যাংক এর বিল এখনো পরিশোধ করা হয়নি। বিল
+              প্রতি মাসের ১০ তারিখের মধ্যে পরিশোধ করার জন্য বিশেষভাবে অনুরোধ
+              জানানো যাচ্ছে। বিষয়টি আন্তরিকভাবে বিবেচনা করার জন্য ধন্যবাদ।
+            </div>
+
+            <!-- HEADER -->
+            <div
+              class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3"
+            >
+              <h2 class="text-primary mb-0">Students</h2>
+
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary d-flex align-items-center gap-2">
+                  <i class="ri-user-add-line"></i>
+                  Admit Student
+                </button>
+
+                <button
+                  class="btn btn-outline-primary d-flex align-items-center gap-2"
+                >
+                  <i class="ri-file-list-3-line"></i>
+                  Students Summary
+                </button>
+
+                <button
+                  class="btn btn-outline-primary d-flex align-items-center gap-2"
+                >
+                  <i class="ri-bar-chart-line"></i>
+                  Admissions Summary
+                </button>
+              </div>
+            </div>
+
+            <!-- SEARCH & FILTER CARD -->
+            <div class="card shadow-sm rounded-4">
+              <div class="card-body">
+                <!-- SEARCH + FILTER -->
+                <div class="row g-2 align-items-center mb-3">
+                  <div class="col-12 col-lg-9">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search by ID / Name / Phone..."
+                      />
+                      <button class="btn btn-primary">
+                        <i class="ri-search-line"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-lg-3 d-grid">
+                    <button
+                      class="btn btn-primary d-flex align-items-center gap-2"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#filtersSection"
+                      aria-expanded="false"
+                    >
+                      <i class="ri-filter-3-line"></i>
+                      Filters
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ACTIVE FILTERS -->
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                  <span
+                    class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill"
+                  >
+                    Status: Active
+                    <i class="ri-close-line ms-1"></i>
+                  </span>
+
+                  <span
+                    class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill"
+                  >
+                    Session: 2025
+                    <i class="ri-close-line ms-1"></i>
+                  </span>
+
+                  <a href="#" class="text-primary text-decoration-none ms-2">
+                    Clear Filters
+                  </a>
+                </div>
+              </div>
+              <!-- FILTERS SECTION -->
+              <!-- modal -->
+              <div class="collapse mt-4" id="filtersSection">
+                <div class="card border-0 shadow-sm rounded-4">
+                  <div class="card-body">
+                    <form class="row g-4">
+                      <!-- Row 1 -->
+                      <div class="col-md-3">
+                        <label class="form-label">Status</label>
+                        <select class="form-select">
+                          <option>Active</option>
+                          <option>Inactive</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Session</label>
+                        <select class="form-select">
+                          <option>2025</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Branch</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Shift</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <!-- Row 2 -->
+                      <div class="col-md-3">
+                        <label class="form-label">Class</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Section</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Group</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Roll</label>
+                        <input type="text" class="form-control" />
+                      </div>
+
+                      <!-- Row 3 -->
+                      <div class="col-md-3">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Religion</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Residential Status</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">Coaching Status</label>
+                        <select class="form-select">
+                          <option>All</option>
+                        </select>
+                      </div>
+
+                      <!-- Footer -->
+                      <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+                        <button
+                          type="button"
+                          class="btn btn-outline-secondary"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#filtersSection"
+                        >
+                          Close Filters
+                        </button>
+                        <button class="btn btn-primary">Apply Filters</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- student data table   -->
+          <div class="container-fluid mt-4 card p-4 shadow-sm rounded-4">
+            <!-- TOP CONTROLS -->
+            <div
+              class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-3"
+            >
+              <div class="d-flex align-items-center gap-2">
+                <span>Show</span>
+                <select class="form-select form-select-sm w-auto">
+                  <option>10</option>
+                  <option>25</option>
+                  <option>50</option>
+                </select>
+                <span>entries</span>
+              </div>
+
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-outline-primary btn-sm">
+                  <i class="ri-printer-line"></i> Print
+                </button>
+                <button class="btn btn-outline-primary btn-sm">
+                  <i class="ri-file-pdf-line"></i> PDF
+                </button>
+                <button class="btn btn-outline-primary btn-sm">
+                  <i class="ri-file-excel-line"></i> Excel
+                </button>
+                <button class="btn btn-outline-primary btn-sm">
+                  <i class="ri-eye-line"></i> Columns
+                </button>
+                <button class="btn btn-outline-primary btn-sm">
+                  <i class="ri-refresh-line"></i> Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-responsive  rounded-3">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-primary text-white">
+                  <tr>
+                    <th>SL</th>
+                    <th>ID</th>
+                    <th>Roll</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Shift</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Tags</th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <!-- ROW -->
+                  <tr>
+                    <td>1</td>
+                    <td>202551056</td>
+                    <td>1</td>
+                    <td>
+                      <img
+                        src="https://i.pravatar.cc/40?img=1"
+                        class="rounded-circle"
+                        width="40"
+                      />
+                    </td>
+                    <td>
+                      <a href="#" class="text-primary text-decoration-none">
+                        Md. Tahan Islam Rahim
+                      </a>
+                    </td>
+                    <td>Primary</td>
+                    <td>Morning</td>
+                    <td>Play</td>
+                    <td>Uranus</td>
+                    <td></td>
+                    <td class="text-center">
+                      <button class="btn btn-light rounded-circle">
+                        <i class="ri-edit-2-line text-secondary"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>202551057</td>
+                    <td>2</td>
+                    <td>
+                      <img
+                        src="https://i.pravatar.cc/40?img=2"
+                        class="rounded-circle"
+                        width="40"
+                      />
+                    </td>
+                    <td>
+                      <a class="text-primary text-decoration-none"
+                        >Md. Mahinur Rahman</a
+                      >
+                    </td>
+                    <td>Primary</td>
+                    <td>Morning</td>
+                    <td>Play</td>
+                    <td>Uranus</td>
+                    <td></td>
+                    <td class="text-center">
+                      <button class="btn btn-light rounded-circle">
+                        <i class="ri-edit-2-line text-secondary"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>5</td>
+                    <td>202551061</td>
+                    <td>6</td>
+                    <td>
+                      <img
+                        src="https://i.pravatar.cc/40?img=5"
+                        class="rounded-circle"
+                        width="40"
+                      />
+                    </td>
+                    <td>
+                      <a class="text-primary text-decoration-none"
+                        >Md. Huziafa</a
+                      >
+                    </td>
+                    <td>Primary</td>
+                    <td>Morning</td>
+                    <td>Play</td>
+                    <td>Uranus</td>
+                    <td>
+                      <span class="badge bg-primary-subtle text-primary"
+                        >Arabic</span
+                      >
+                    </td>
+                    <td class="text-center">
+                      <button class="btn btn-light rounded-circle">
+                        <i class="ri-edit-2-line text-secondary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- FOOTER -->
+            <div
+              class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-3"
+            >
+              <div>Showing 1 to 10 of 1,022 entries</div>
+
+              <nav>
+                <ul class="pagination mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item active"><a class="page-link">1</a></li>
+                  <li class="page-item"><a class="page-link">2</a></li>
+                  <li class="page-item"><a class="page-link">3</a></li>
+                  <li class="page-item"><a class="page-link">…</a></li>
+                  <li class="page-item"><a class="page-link">103</a></li>
+                  <li class="page-item"><a class="page-link">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </main>
+
+        <!-- footer  -->
+
+        <footer class="app-footer">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <!-- Left -->
+              <div class="col-md-6 text-center text-md-start">
+                © 2019–2025 · Crafted with
+                <span class="heart">❤</span>
+                by <a href="#" class="brand">EximusEdu</a>
+              </div>
+
+              <!-- Right -->
+              <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                For support:
+                <a href="mailto:support@eximusedu.com" class="support-link">
+                  support@eximusedu.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

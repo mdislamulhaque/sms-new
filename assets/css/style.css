@@ -834,3 +834,28 @@ ul {
   margin: 0 2px;
 }
 /* footer style end here  */
+
+/* student filter style start here  */
+  .collapse {
+    transition: height 0.35s ease;
+  }
+  .container-fluid{
+    --bs-gutter-x: 0 !important;
+  }
+/* student filter style end here  */
+/* table style start here  */
+  thead th {
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f4f8ff;
+  }
+  .table{
+    --bs-table-hover-color:none !important;
+    --bs-table-hover-bg: none !important;
+  }
+  .pagination {
+    flex-wrap: wrap !important;
+  }
+
+  /* table style end here  */
