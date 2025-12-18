@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <img src="https://dummyimage.com/40x40/0d6efd/ffffff&text=O" />
+          <span class="logo-text">Omar Kindergarten</span>
+
+          <!-- MOBILE CLOSE BUTTON -->
+          <button id="closeSidebar" class="btn btn-sm btn-light sidebar-close">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+
+        <ul class="menu">
+          <li class="active">
+            <a href="#"><i class="ri-home-4-line"></i><span>Home</span></a>
+          </li>
+
+          <!-- ===== HR ===== -->
+          <li class="has-sub">
+            <a href="#">
+              <i class="ri-team-line"></i>
+              <span>HR</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </a>
+
+            <ul class="submenu">
+              <li><a href="#">Employees</a></li>
+
+              <!-- HR → Payroll (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Payroll</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Salary Sheet</a></li>
+                  <li><a href="#">Generate Salary</a></li>
+                  <li><a href="#">Payslip</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Attendance</a></li>
+            </ul>
+          </li>
+
+          <!-- ===== Academics ===== -->
+          <li class="has-sub">
+            <a href="#">
+              <i class="ri-book-2-line"></i>
+              <span>Academics</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </a>
+
+            <ul class="submenu">
+              <li><a href="#">Classes</a></li>
+
+              <!-- Academics → Examination (Parent again) -->
+              <li class="has-sub">
+                <a href="#">
+                  <span>Examination</span>
+                  <i class="ri-arrow-right-s-line arrow"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="#">Exam List</a></li>
+                  <li><a href="#">Marks Entry</a></li>
+                  <li><a href="#">Result</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Subjects</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="ri-wallet-3-line"></i><span>Accounts</span></a
+            >
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="ri-store-2-line"></i><span>Inventory</span></a
+            >
+          </li>
+
+          <li>
+            <a href="#"><i class="ri-message-2-line"></i><span>SMS</span></a>
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="ri-settings-3-line"></i><span>System Setup</span></a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- overlay  -->
+      <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+          <button id="toggleSidebar" class="btn btn-light">
+            <i class="ri-menu-line"></i>
+          </button>
+
+          <input class="form-control search" placeholder="Search..." />
+
+          <div class="topbar-right">
+            <i class="ri-notification-3-line"></i>
+            <span class="badge bg-danger">9,941/=</span>
+
+            <!-- PROFILE WRAPPER -->
+            <div class="profile-wrapper">
+              <img
+                src="/assets/images/profile.png"
+                class="avatar"
+                id="profileToggle"
+              />
+
+              <!-- PROFILE DROPDOWN -->
+              <div class="profile-dropdown" id="profileDropdown">
+                <div class="profile-info">
+                  <img src="/assets/images/profile.png" />
+                  <div>
+                    <strong>Omar Abdul Aziz Talukder</strong>
+                    <small>ID : 91149</small>
+                  </div>
+                </div>
+
+                <ul>
+                  <li><i class="ri-user-3-line"></i> Profile</li>
+                  <li><i class="ri-lock-line"></i> Change Password</li>
+                  <li><i class="ri-tools-line"></i> Troubleshooting</li>
+                  <li><i class="ri-information-line"></i> About</li>
+                </ul>
+
+                <div class="logout">
+                  <i class="ri-logout-box-r-line"></i>
+                  <a href="index.html">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+          <div class="alert alert-danger small">
+            দৃষ্টি আকর্ষণ: এক্সিমসএডু এর বিল এখনো পরিশোধ করা হয়নি।
+          </div>
+
+          <h3>Home</h3>
+          <p class="text-muted">Last Updated: 33 minutes ago</p>
+
+          <h4 class="mt-4">Income-Expense</h4>
+
+          <div class="row g-3 mt-2">
+            <div class="col-md-4 col-lg-2">
+              <div class="stat-card success">
+                <h6>Total Income</h6>
+                <h5>৳ 2,71,57,800</h5>
+                <small>2025</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+              <div class="stat-card danger">
+                <h6>Total Expense</h6>
+                <h5>৳ 1,37,87,521</h5>
+                <small>2025</small>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- due cards  -->
+        <div class="container my-4">
+          <!-- Header -->
+          <div class="d-flex align-items-center mb-4">
+            <h4 class="me-3 mb-0">Dues</h4>
+            <select class="form-select w-auto">
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+          </div>
+
+          <!-- Cards -->
+          <div class="row g-4">
+            <!-- Card -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card dues-danger">
+                <div class="dues-title">Total Dues (Active)</div>
+                <div class="dues-count">74</div>
+                <div class="dues-amount">৳ 2,98,870</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card dues-danger">
+                <div class="dues-title">Total Dues (Till 30 Nov)</div>
+                <div class="dues-count">35</div>
+                <div class="dues-amount">৳ 1,53,490</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card dues-danger">
+                <div class="dues-title">Total Dues (Dec 2025)</div>
+                <div class="dues-count">68</div>
+                <div class="dues-amount">৳ 1,45,380</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card bg-white">
+                <div class="dues-title dark">Admission Fee</div>
+                <div class="dues-count dark">7</div>
+                <div class="dues-amount dark">৳ 21,000</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card bg-white">
+                <div class="dues-title dark">Hostel Fee</div>
+                <div class="dues-count dark">17</div>
+                <div class="dues-amount dark">৳ 1,25,300</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card bg-white">
+                <div class="dues-title dark">Other</div>
+                <div class="dues-count dark">72</div>
+                <div class="dues-amount dark">৳ 29,370</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card bg-white">
+                <div class="dues-title dark">Session Fee</div>
+                <div class="dues-count dark">11</div>
+                <div class="dues-amount dark">৳ 53,000</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card bg-white">
+                <div class="dues-title dark">Tuition Fee</div>
+                <div class="dues-count dark">32</div>
+                <div class="dues-amount dark">৳ 70,200</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card bg-white">
+                <div class="dues-title dark">Paid Nothing</div>
+                <div class="dues-count dark">2</div>
+                <div class="dues-amount dark">৳ 31,820</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+              <div class="dues-card dues-danger">
+                <div class="dues-title">Total Dues (Terminated)</div>
+                <div class="dues-count">163</div>
+                <div class="dues-amount">৳ 6,97,690</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ===================== -->
+        <div class="container my-4">
+          <!-- ================= Student Attendance ================= -->
+          <h4 class="section-title">Student Attendance (Today)</h4>
+          <div class="row g-3 student-attendance">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="attendance-card present">
+                <i class="ri-checkbox-circle-fill"></i>
+                <p>Present</p>
+                <h2>0</h2>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="attendance-card absent">
+                <i class="ri-close-circle-fill"></i>
+                <p>Absent</p>
+                <h2>669</h2>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="attendance-card leave">
+                <i class="ri-time-fill"></i>
+                <p>Leave</p>
+                <h2>0</h2>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="attendance-card pending">
+                <i class="ri-alert-fill"></i>
+                <p>Pending Sec.</p>
+                <h2>35</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= Teacher  Attendance ================= -->
+          <div class="row mt-5">
+            <div class="col-md-6">
+              <h4 class="section-title">Teacher Attendance (Today)</h4>
+              <div class="row g-3 teacher-attendance">
+                <div class="col-md-6">
+                  <div class="attendance-card present">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <p>Present</p>
+                    <h2>23</h2>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="attendance-card absent">
+                    <i class="ri-close-circle-fill"></i>
+                    <p>Absent</p>
+                    <h2>0</h2>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="attendance-card leave">
+                    <i class="ri-time-fill"></i>
+                    <p>Leave</p>
+                    <h2>0</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- =============== Staff Attendance=============== -->
+            <div class="col-md-6">
+              <h4 class="section-title">Staff Attendance (Today)</h4>
+              <div class="row g-3 staff-attendance">
+                <div class="col-md-6">
+                  <div class="attendance-card present">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <p>Present</p>
+                    <h2>18</h2>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="attendance-card absent">
+                    <i class="ri-close-circle-fill"></i>
+                    <p>Absent</p>
+                    <h2>0</h2>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="attendance-card leave">
+                    <i class="ri-time-fill"></i>
+                    <p>Leave</p>
+                    <h2>0</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= Students & Admission ================= -->
+          <div class="d-flex align-items-center mt-5 mb-3">
+            <h4 class="section-title me-3">Students & Admission</h4>
+            <select class="form-select w-auto">
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+          </div>
+
+          <div class="row g-3 students-admission">
+            <div class="col-md-3">
+              <div class="admission-card total">
+                <i class="ri-user-3-fill"></i>
+                <p>Total</p>
+                <h2>1024</h2>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="admission-card new">
+                <i class="ri-user-add-fill"></i>
+                <p>New</p>
+                <h2>261</h2>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="admission-card renewed">
+                <i class="ri-refresh-fill"></i>
+                <p>Renewed</p>
+                <h2>763</h2>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="admission-card pending">
+                <i class="ri-time-fill"></i>
+                <p>Pending Renewal</p>
+                <h2>2</h2>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="admission-card old">
+                <i class="ri-user-fill"></i>
+                <p>Old</p>
+                <h2>765</h2>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="admission-card left">
+                <i class="ri-user-unfollow-fill"></i>
+                <p>Left</p>
+                <h2>220</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- calander section  -->
+        <div class="container my-4">
+          <div class="row g-4">
+            <!-- ================= Calendar ================= -->
+            <div class="col-lg-8">
+              <div class="calendar-box">
+                <!-- Header -->
+                <div class="calendar-header">
+                  <i class="ri-arrow-left-s-line"></i>
+                  <h5>December 2025</h5>
+                  <i class="ri-arrow-right-s-line"></i>
+                </div>
+
+                <!-- Days -->
+                <div class="calendar-days">
+                  <div>SUN</div>
+                  <div>MON</div>
+                  <div>TUE</div>
+                  <div>WED</div>
+                  <div>THU</div>
+                  <div>FRI</div>
+                  <div>SAT</div>
+                </div>
+
+                <!-- Dates -->
+                <div class="calendar-grid">
+                  <span class="muted">30</span>
+                  <span>1</span><span>2</span><span>3</span><span>4</span
+                  ><span>5</span><span>6</span> <span>7</span><span>8</span
+                  ><span>9</span><span>10</span><span>11</span><span>12</span
+                  ><span>13</span> <span>14</span><span>15</span><span>16</span
+                  ><span class="active">17</span><span>18</span><span>19</span
+                  ><span>20</span> <span>21</span><span>22</span><span>23</span
+                  ><span>24</span><span>25</span><span>26</span><span>27</span>
+                  <span>28</span><span>29</span><span>30</span><span>31</span>
+                  <span class="muted">1</span><span class="muted">2</span
+                  ><span class="muted">3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- calander cdn  -->
+            <!-- <div class="container my-4 col-lg-8">
+              <h4 class="mb-3">Real Time Calendar</h4>
+              <div id="calendar"></div>
+            </div> -->
+
+            <!-- ================= Notice ================= -->
+            <div class="col-lg-4">
+              <div class="notice-box">
+                <div class="notice-header">
+                  <div>
+                    <i class="ri-information-fill"></i>
+                    <span>Notice-Events</span>
+                  </div>
+                  <a href="#">View All</a>
+                </div>
+
+                <p class="notice-text">
+                  No notice/event available for your attention.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- footer  -->
+
+    <footer class="app-footer">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Left -->
+          <div class="col-md-6 text-center text-md-start">
+            © 2019–2025 · Crafted with
+            <span class="heart">❤</span>
+            by <a href="#" class="brand">EximusEdu</a>
+          </div>
+
+          <!-- Right -->
+          <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+            For support:
+            <a href="mailto:support@eximusedu.com" class="support-link">
+              support@eximusedu.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+      </div>
+    </div>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!-- FullCalendar JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script> -->
+  </body>
+</html>

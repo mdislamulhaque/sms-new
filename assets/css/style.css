@@ -1,0 +1,637 @@
+/*login page css start here*/
+
+/* Page Background */
+/* body {
+    min-height: 100vh;
+   
+} */
+
+/* Wrapper */
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #4a90f5, #1e6de0);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Card */
+.login-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Inputs */
+.form-control {
+  background-color: #eef4ff;
+  border: none;
+  height: 45px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: #eef4ff;
+}
+
+/* Password eye button */
+.password-toggle {
+  background-color: #eef4ff;
+  border: none;
+}
+
+/* Links */
+.forgot-link {
+  font-size: 14px;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+  height: 45px;
+  background-color: #4a90f5;
+  border: none;
+}
+
+.btn-outline-primary {
+  height: 45px;
+}
+
+/* Footer */
+.footer-text {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+/*login page css end here*/
+
+/* dashboard page css start here */
+body {
+  background: #f4f6f8;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #263238;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-weight: 600;
+}
+
+.sidebar.collapsed .logo-text,
+.sidebar.collapsed span,
+.sidebar.collapsed .arrow {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+
+.menu li a {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cfd8dc;
+  text-decoration: none;
+}
+
+.menu li.active a,
+.menu li a:hover {
+  background: #37474f;
+  color: #fff;
+}
+
+.has-sub .submenu {
+  display: none;
+  background: #2f3e46;
+}
+
+.has-sub.open .submenu {
+  display: block;
+}
+
+.submenu li a {
+  padding-left: 17px;
+  font-size: 14px;
+}
+
+/* 2nd level submenu */
+.submenu .has-sub > .submenu {
+  display: none;
+  background: #37474f;
+}
+
+/* Open state */
+.submenu .has-sub.open > .submenu {
+  display: block;
+}
+
+/* Indent deeper level */
+.submenu .has-sub > a {
+  padding-left: 17px;
+  font-size: 14px;
+}
+
+.submenu .has-sub .submenu a {
+  /* padding-left: 80px; */
+  font-size: 13px;
+}
+
+/* COLLAPSED SIDEBAR HOVER SUBMENU */
+.sidebar.collapsed .has-sub {
+  position: relative;
+}
+
+.sidebar.collapsed .has-sub .submenu {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 200px;
+  background: #2f3e46;
+  display: none;
+  border-radius: 0px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.sidebar.collapsed .has-sub:hover .submenu {
+  display: block;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+}
+
+/* TOPBAR */
+.topbar {
+  background: #fff;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search {
+  max-width: 300px;
+}
+
+.topbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+/* CONTENT */
+.content {
+  padding: 20px;
+}
+
+/* STAT CARD */
+.stat-card {
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.stat-card.success {
+  background: #f1fff5;
+  color: #2e7d32;
+}
+.stat-card.danger {
+  background: #fff1f1;
+  color: #c62828;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .sidebar.collapsed {
+    width: 260px;
+  }
+}
+
+/* SIDEBAR CLOSE BUTTON */
+.sidebar-close {
+  margin-left: auto;
+  display: none;
+}
+
+/* OVERLAY */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: none;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+  .sidebar-close {
+    display: block;
+  }
+
+  .sidebar.show + .sidebar-overlay {
+    display: block;
+  }
+}
+
+/* due card style start here */
+.dues-card {
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  height: 100%;
+}
+
+.dues-danger {
+  background: #fff3f3;
+}
+
+.dues-title {
+  font-size: 14px;
+  color: #ff4d4f;
+  font-weight: 500;
+}
+
+.dues-title.dark {
+  color: #333;
+}
+
+.dues-count {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff4d4f;
+  line-height: 1;
+}
+
+.dues-count.dark {
+  color: #111;
+}
+
+.dues-amount {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ff4d4f;
+}
+
+.dues-amount.dark {
+  color: #8c8c8c;
+}
+/* due card style end here */
+
+/* student attendence style start here  */
+.student-attendance .attendance-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.student-attendance i {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.present {
+  background: #f2fff7;
+  color: #16a34a;
+}
+.absent {
+  background: #fff1f1;
+  color: #ef4444;
+}
+.leave {
+  background: #f0fbff;
+  color: #0ea5e9;
+}
+.pending {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+/* student attendence style end here  */
+
+/* staff attendence style start here  */
+.teacher-attendance .attendance-card,
+.staff-attendance .attendance-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.teacher-attendance i,
+.staff-attendance i {
+  font-size: 26px;
+}
+
+/* staff attendence style end here  */
+
+/* student addmmission style start here   */
+.students-admission .admission-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.students-admission i {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.total {
+  background: #f5f3ff;
+  color: #4f46e5;
+}
+.new {
+  background: #fff7ed;
+  color: #92400e;
+}
+.renewed {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+.old {
+  background: #ecfeff;
+  color: #0284c7;
+}
+.left {
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+/* student addmmission style end here   */
+
+/* calander css start here  */
+
+.calendar-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header i {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-grid span {
+  height: 80px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.calendar-grid span:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-grid .muted {
+  color: #bdbdbd;
+}
+
+.calendar-grid .active {
+  background: #fffbe6;
+}
+
+/* ================= Notice ================= */
+
+.notice-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%;
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.notice-header i {
+  margin-right: 6px;
+  color: #6b7280;
+}
+
+.notice-header a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.notice-text {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* calander cdn style  */
+/* #calendar {
+      background: #fff;
+      padding: 15px;
+      border-radius: 14px;
+    } */
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .calendar-grid span {
+    height: 60px;
+  }
+}
+
+/* calander css end here  */
+
+/* dashboard page css end here */
+
+/* profile modal css start here  */
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-wrapper img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+.avatar {
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* DROPDOWN */
+.profile-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 260px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 999;
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+/* HEADER */
+.profile-info {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+}
+
+.profile-info small {
+  color: #777;
+}
+
+/* MENU */
+.profile-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-dropdown ul li {
+  padding: 10px 14px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile-dropdown ul li:hover {
+  background: #f5f5f5;
+}
+
+/* LOGOUT */
+.profile-dropdown .logout {
+  padding: 12px 14px;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  color: #d00;
+}
+
+.profile-dropdown .logout:hover {
+  background: #ffecec;
+}
+/* profile modal css end here  */
+
+/* footer style start here  */
+
+.app-footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 12px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.app-footer a {
+  text-decoration: none;
+}
+
+.app-footer .brand {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.app-footer .support-link {
+  color: #2563eb;
+}
+
+.app-footer .heart {
+  color: #ef4444;
+  margin: 0 2px;
+}
+/* footer style end here  */
