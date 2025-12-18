@@ -1,10 +1,16 @@
-/*login page css start here*/
+:root {
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --primary-color: #263238;
+  --secondary-color: #37474f;
+  --hover-color: #37474f;
+  --text-color: #cfd8dc;
+  --active-color: #0d6efd;
+  --submenu-bg: #2f3e46;
+  --deep-submenu-bg: #37474f;
+}
 
-/* Page Background */
-/* body {
-    min-height: 100vh;
-   
-} */
+/*login page css start here*/
 
 /* Wrapper */
 .login-wrapper {
@@ -76,8 +82,13 @@
 
 /* dashboard page css start here */
 body {
-  background: #f4f6f8;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .layout {
@@ -87,14 +98,18 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-  width: 260px;
-  background: #263238;
+  width: var(--sidebar-width);
+  background: var(--primary-color);
   color: #fff;
   transition: all 0.3s ease;
+  position: fixed;
+  height: 100vh;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .sidebar.collapsed {
-  width: 80px;
+  width: var(--sidebar-collapsed-width);
 }
 
 .sidebar-header {
@@ -102,10 +117,20 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .logo-text {
   font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
 }
 
 .sidebar.collapsed .logo-text,
@@ -114,13 +139,32 @@ body {
   display: none;
 }
 
+/* MOBILE CLOSE BUTTON */
+.sidebar-close {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+
+/* Menu */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
+  padding-top: 20px;
 }
-li {
-  list-style-type: none;
+
+.menu li {
+  position: relative;
+  list-style: none;
+}
+
+ol,
+ul {
+  padding-left: 0.1rem !important;
 }
 
 .menu li a {
@@ -128,19 +172,32 @@ li {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #cfd8dc;
+  color: var(--text-color);
   text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .menu li.active a,
 .menu li a:hover {
-  background: #37474f;
+  background: var(--hover-color);
   color: #fff;
 }
 
+/* Arrow icons */
+.arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.has-sub.open > a .arrow {
+  transform: rotate(180deg);
+}
+
+/* Submenu styles for expanded sidebar */
 .has-sub .submenu {
   display: none;
-  background: #2f3e46;
+  background: var(--submenu-bg);
 }
 
 .has-sub.open .submenu {
@@ -148,30 +205,35 @@ li {
 }
 
 .submenu li a {
-  padding-left: 17px;
+  padding-left: 50px;
   font-size: 14px;
 }
 
 /* 2nd level submenu */
 .submenu .has-sub > .submenu {
   display: none;
-  background: #37474f;
+  background: var(--deep-submenu-bg);
 }
 
-/* Open state */
+/* Open state for nested submenus */
 .submenu .has-sub.open > .submenu {
   display: block;
 }
 
 /* Indent deeper level */
 .submenu .has-sub > a {
-  padding-left: 17px;
+  padding-left: 50px;
   font-size: 14px;
 }
 
 .submenu .has-sub .submenu a {
-  /* padding-left: 80px; */
+  padding-left: 70px;
   font-size: 13px;
+}
+
+/* Submenu arrow for nested items */
+.submenu .arrow {
+  font-size: 0.9rem;
 }
 
 /* COLLAPSED SIDEBAR HOVER SUBMENU */
@@ -179,20 +241,159 @@ li {
   position: relative;
 }
 
+/* Hide all submenus by default in collapsed mode */
 .sidebar.collapsed .has-sub .submenu {
-  position: absolute;
+  display: none !important;
+}
+
+/* Hover-triggered submenu for collapsed sidebar */
+.collapsed-submenu-container {
+  position: fixed;
+  left: var(--sidebar-collapsed-width);
   top: 0;
-  left: 80px;
-  width: 200px;
-  background: #2f3e46;
+  background: var(--submenu-bg);
+  min-width: 220px;
+  max-height: 70vh;
+  overflow-y: auto;
   display: none;
-  border-radius: 0px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   z-index: 999;
 }
 
-.sidebar.collapsed .has-sub:hover .submenu {
+.collapsed-submenu-container.show {
   display: block;
+}
+
+.collapsed-submenu-header {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.collapsed-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collapsed-submenu li a {
+  padding: 10px 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.collapsed-submenu li a:hover {
+  background: var(--hover-color);
+  color: #fff;
+}
+
+/* Nested submenu in collapsed mode */
+.collapsed-submenu .has-sub > a::after {
+  content: "\f054";
+  font-family: "remixicon";
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.collapsed-submenu .has-sub.open > a::after {
+  transform: rotate(90deg);
+}
+
+.collapsed-submenu .submenu {
+  display: none;
+  background: var(--deep-submenu-bg);
+}
+
+.collapsed-submenu .has-sub.open .submenu {
+  display: block;
+}
+
+/* Main Content */
+#content {
+  margin-left: var(--sidebar-width);
+  /* padding: 20px; */
+  transition: all 0.3s ease;
+  width: calc(100% - var(--sidebar-width));
+}
+
+.sidebar.collapsed ~ #content {
+  margin-left: var(--sidebar-collapsed-width);
+  width: calc(100% - var(--sidebar-collapsed-width));
+}
+
+/* Overlay for mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .sidebar {
+    margin-left: -260px;
+    width: 260px;
+  }
+
+  .sidebar.show {
+    margin-left: 0;
+  }
+
+  .sidebar.collapsed {
+    width: 260px;
+  }
+
+  .sidebar-close {
+    display: block;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+  }
+
+  #content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebar.show ~ #content {
+    margin-left: 0;
+  }
+}
+
+/* Content styling */
+.page-header {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.content-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.badge-status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 /* MAIN */
@@ -506,21 +707,12 @@ li {
   font-size: 15px;
 }
 
-/* calander cdn style  */
-/* #calendar {
-      background: #fff;
-      padding: 15px;
-      border-radius: 14px;
-    } */
-
 /* ================= Responsive ================= */
 @media (max-width: 768px) {
   .calendar-grid span {
     height: 60px;
   }
 }
-
-/* calander css end here  */
 
 /* dashboard page css end here */
 
