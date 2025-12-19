@@ -329,3 +329,50 @@ window.addEventListener("scroll", () => {
 });
 
 //profile modal js end here--
+
+
+// student form js start here--
+
+  const enrollment = document.getElementById("enrollmentForm");
+  const toggleIcon = document.getElementById("toggleIcon");
+
+  enrollment.addEventListener("shown.bs.collapse", () => {
+    toggleIcon.textContent = "−";
+  });
+
+  enrollment.addEventListener("hidden.bs.collapse", () => {
+    toggleIcon.textContent = "+";
+  });
+
+  const section = document.getElementById("basicInfo");
+  const icon = document.getElementById("toggleIcon");
+
+  section.addEventListener("shown.bs.collapse", () => (icon.textContent = "−"));
+  section.addEventListener(
+    "hidden.bs.collapse",
+    () => (icon.textContent = "+")
+);
+  
+const adminInfo = document.getElementById("adminInfo");
+const adminIcon = document.getElementById("adminIcon");
+
+adminInfo.addEventListener(
+  "shown.bs.collapse",
+  () => (adminIcon.textContent = "−")
+);
+adminInfo.addEventListener(
+  "hidden.bs.collapse",
+  () => (adminIcon.textContent = "+")
+);
+
+ const fatherInfo = document.getElementById("fatherInfo");
+ const fatherIcon = document.getElementById("fatherIcon");
+
+ fatherInfo.addEventListener(
+   "shown.bs.collapse",
+   () => (fatherIcon.textContent = "−")
+ );
+ fatherInfo.addEventListener(
+   "hidden.bs.collapse",
+   () => (fatherIcon.textContent = "+")
+ );
