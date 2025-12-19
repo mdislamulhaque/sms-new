@@ -31,9 +31,9 @@
 
 /* Inputs */
 .form-control {
-  background-color: #eef4ff;
+  /* background-color: #eef4ff;
   border: none;
-  height: 45px;
+  height: 45px; */
 }
 
 .form-control:focus {
@@ -86,10 +86,14 @@ body {
   background-color: #f5f7fa;
   margin: 0;
   padding: 0;
-  display: flex;
+  /* display: flex; */
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .layout {
@@ -859,3 +863,35 @@ ul {
   }
 
   /* table style end here  */
+
+  /* student form style start here   */
+   .form-label {
+      font-weight: 500;
+    }
+    .upload-box {
+      border: 2px dashed #dee2e6;
+      border-radius: 6px;
+      padding: 30px;
+      text-align: center;
+      color: #adb5bd;
+      cursor: pointer;
+    }
+    .upload-box:hover {
+      background: #f8f9fa;
+    }
+    .gender-btns .btn {
+      width: 100%;
+    }
+
+     .check-circle {
+      width: 28px;
+      height: 28px;
+      border: 2px solid #ced4da;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #198754;
+      font-weight: bold;
+    }
+  
