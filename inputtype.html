@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Input Types - Most Used</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="modern-header">
+            <div class="container">
+                <h1><i class="fas fa-keyboard"></i> Modern Input Types</h1>
+                <p class="subtitle">Most commonly used input types with responsive, sleek design</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container main-container">
+            <!-- Basic Input Types Section -->
+            <section class="input-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-edit"></i> Basic Input Types</h2>
+                    <p class="section-description">Essential input fields for everyday forms</p>
+                </div>
+                
+                <div class="row">
+                    <!-- Text Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Text Input</h3>
+                                <span class="input-tag">Most Used</span>
+                            </div>
+                            <p class="input-description">Standard single-line text field for names, addresses, etc.</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="modern-input" placeholder="Enter your full name">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Email Input</h3>
+                                <span class="input-tag important">Email Validation</span>
+                            </div>
+                            <p class="input-description">Validates email format automatically on modern browsers</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="modern-input" placeholder="name@example.com">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Password Input</h3>
+                                <span class="input-tag">Secure</span>
+                            </div>
+                            <p class="input-description">Hides characters for secure password entry with toggle visibility</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="modern-input" id="passwordField" placeholder="Enter password">
+                                    <button class="input-action" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Number Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Number Input</h3>
+                                <span class="input-tag">Increment/Decrement</span>
+                            </div>
+                            <p class="input-description">Includes up/down arrows for number adjustment with min/max limits</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-hashtag"></i></span>
+                                    <input type="number" class="modern-input" min="0" max="100" value="25" placeholder="Age">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Date Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Date Input</h3>
+                                <span class="input-tag">Calendar Picker</span>
+                            </div>
+                            <p class="input-description">Native date picker with calendar interface</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-calendar"></i></span>
+                                    <input type="date" class="modern-input" value="2023-12-15">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Time Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Time Input</h3>
+                                <span class="input-tag">Time Selector</span>
+                            </div>
+                            <p class="input-description">Time selector with hours and minutes</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-clock"></i></span>
+                                    <input type="time" class="modern-input" value="14:30">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selection Inputs Section -->
+            <section class="input-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-check-square"></i> Selection Inputs</h2>
+                    <p class="section-description">Inputs for making choices and selections</p>
+                </div>
+                
+                <div class="row">
+                    <!-- Checkbox -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Checkbox</h3>
+                                <span class="input-tag">Multiple Selection</span>
+                            </div>
+                            <p class="input-description">Allows multiple options to be selected</p>
+                            <div class="input-example">
+                                <div class="checkbox-group">
+                                    <label class="modern-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Accept Terms & Conditions</span>
+                                    </label>
+                                    <label class="modern-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Subscribe to Newsletter</span>
+                                    </label>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Radio Buttons -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Radio Buttons</h3>
+                                <span class="input-tag">Single Selection</span>
+                            </div>
+                            <p class="input-description">Allows only one option to be selected from a group</p>
+                            <div class="input-example">
+                                <div class="radio-group">
+                                    <label class="modern-radio">
+                                        <input type="radio" name="gender" checked>
+                                        <span class="radiomark"></span>
+                                        <span class="radio-label">Male</span>
+                                    </label>
+                                    <label class="modern-radio">
+                                        <input type="radio" name="gender">
+                                        <span class="radiomark"></span>
+                                        <span class="radio-label">Female</span>
+                                    </label>
+                                    <label class="modern-radio">
+                                        <input type="radio" name="gender">
+                                        <span class="radiomark"></span>
+                                        <span class="radio-label">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Select Dropdown -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Select Dropdown</h3>
+                                <span class="input-tag">Dropdown List</span>
+                            </div>
+                            <p class="input-description">Dropdown list for selecting from multiple options</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-flag"></i></span>
+                                    <select class="modern-select">
+                                        <option value="">Select Country</option>
+                                        <option value="us">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="ca">Canada</option>
+                                        <option value="au">Australia</option>
+                                        <option value="de">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Range Slider -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Range Slider</h3>
+                                <span class="input-tag">Visual Control</span>
+                            </div>
+                            <p class="input-description">Slider for selecting a value within a range</p>
+                            <div class="input-example">
+                                <div class="range-container">
+                                    <div class="range-header">
+                                        <span>Volume</span>
+                                        <span id="rangeValue">50%</span>
+                                    </div>
+                                    <input type="range" class="modern-range" min="0" max="100" value="50">
+                                    <div class="range-labels">
+                                        <span>0%</span>
+                                        <span>100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- File Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>File Input</h3>
+                                <span class="input-tag">File Upload</span>
+                            </div>
+                            <p class="input-description">For uploading files with drag & drop support</p>
+                            <div class="input-example">
+                                <div class="file-upload-area" id="fileUploadArea">
+                                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                    <p class="upload-text">Drag & drop files or <span class="browse-link">browse</span></p>
+                                    <p class="upload-subtext">Maximum file size: 10MB</p>
+                                    <input type="file" class="file-input" id="fileInput">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Color Picker -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Color Picker</h3>
+                                <span class="input-tag">Color Selection</span>
+                            </div>
+                            <p class="input-description">Native color picker for selecting colors</p>
+                            <div class="input-example">
+                                <div class="color-picker-container">
+                                    <div class="input-group">
+                                        <span class="input-icon"><i class="fas fa-palette"></i></span>
+                                        <input type="color" class="modern-color" value="#4a6cf7">
+                                        <span class="color-value">#4a6cf7</span>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Inputs Section -->
+            <section class="input-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-magic"></i> Advanced & Special Inputs</h2>
+                    <p class="section-description">Modern inputs with enhanced functionality</p>
+                </div>
+                
+                <div class="row">
+                    <!-- Search Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Search Input</h3>
+                                <span class="input-tag">Search Functionality</span>
+                            </div>
+                            <p class="input-description">Optimized for search queries with clear button</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-search"></i></span>
+                                    <input type="search" class="modern-input" placeholder="Search products...">
+                                    <button class="input-action">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- URL Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>URL Input</h3>
+                                <span class="input-tag">URL Validation</span>
+                            </div>
+                            <p class="input-description">Validates URL format automatically</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-link"></i></span>
+                                    <input type="url" class="modern-input" placeholder="https://example.com">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Tel Input -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Telephone Input</h3>
+                                <span class="input-tag">Phone Format</span>
+                            </div>
+                            <p class="input-description">Optimized for telephone numbers with country code</p>
+                            <div class="input-example">
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" class="modern-input" placeholder="+1 (123) 456-7890">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Textarea</h3>
+                                <span class="input-tag">Multi-line Text</span>
+                            </div>
+                            <p class="input-description">Multi-line text input for longer content like messages or comments</p>
+                            <div class="input-example">
+                                <div class="textarea-container">
+                                    <textarea class="modern-textarea" placeholder="Enter your message here..." rows="4"></textarea>
+                                    <div class="textarea-footer">
+                                        <span class="char-count">0/500 characters</span>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Toggle Switch -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="input-card">
+                            <div class="input-header">
+                                <h3>Toggle Switch</h3>
+                                <span class="input-tag">On/Off Control</span>
+                            </div>
+                            <p class="input-description">Modern toggle switch for binary choices (on/off, yes/no)</p>
+                            <div class="input-example">
+                                <div class="toggle-container">
+                                    <div class="toggle-item">
+                                        <label class="modern-toggle">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                        <div class="toggle-info">
+                                            <span class="toggle-label">Enable Notifications</span>
+                                            <span class="toggle-status">On</span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="modern-toggle">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                        <div class="toggle-info">
+                                            <span class="toggle-label">Dark Mode</span>
+                                            <span class="toggle-status">Off</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Example Section -->
+            <section class="form-example-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-alt"></i> Complete Form Example</h2>
+                    <p class="section-description">Real-world example combining multiple input types</p>
+                </div>
+                
+                <div class="form-example-card">
+                    <form id="exampleForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-user"></i></span>
+                                    <input type="text" id="fullName" class="modern-input" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="userEmail" class="form-label">Email Address *</label>
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" id="userEmail" class="modern-input" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="userPhone" class="form-label">Phone Number</label>
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" id="userPhone" class="modern-input" placeholder="+1 (555) 123-4567">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="userCountry" class="form-label">Country</label>
+                                <div class="input-group">
+                                    <span class="input-icon"><i class="fas fa-globe"></i></span>
+                                    <select id="userCountry" class="modern-select">
+                                        <option value="">Select Country</option>
+                                        <option value="us">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="ca">Canada</option>
+                                        <option value="au">Australia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Subscription Type</label>
+                                <div class="radio-group">
+                                    <label class="modern-radio">
+                                        <input type="radio" name="subscription" value="basic" checked>
+                                        <span class="radiomark"></span>
+                                        <span class="radio-label">Basic (Free)</span>
+                                    </label>
+                                    <label class="modern-radio">
+                                        <input type="radio" name="subscription" value="pro">
+                                        <span class="radiomark"></span>
+                                        <span class="radio-label">Pro ($9.99/month)</span>
+                                    </label>
+                                    <label class="modern-radio">
+                                        <input type="radio" name="subscription" value="enterprise">
+                                        <span class="radiomark"></span>
+                                        <span class="radio-label">Enterprise ($29.99/month)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Preferences</label>
+                                <div class="checkbox-group">
+                                    <label class="modern-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Receive newsletter</span>
+                                    </label>
+                                    <label class="modern-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Enable email notifications</span>
+                                    </label>
+                                    <label class="modern-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Share analytics data</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <label for="userMessage" class="form-label">Message</label>
+                                <textarea id="userMessage" class="modern-textarea" placeholder="Your message..." rows="3"></textarea>
+                            </div>
+                            
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="modern-btn primary-btn">
+                                    <i class="fas fa-paper-plane me-2"></i> Submit Form
+                                </button>
+                                <button type="reset" class="modern-btn secondary-btn">
+                                    <i class="fas fa-redo me-2"></i> Reset Form
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="modern-footer">
+            <div class="container">
+                <p>© 2023 Modern Input Types. Most commonly used input types with responsive design.</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#"><i class="fab fa-codepen"></i> CodePen</a>
+                    <a href="#"><i class="fas fa-code"></i> Documentation</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="input.js"></script>
+</body>
+</html>

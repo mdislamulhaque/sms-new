@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soho Modern DataTables</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Soho CSS -->
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="display-5 fw-bold"><i class="fas fa-table me-2"></i> Soho Modern DataTables</h1>
+            <p class="lead">Stylish, modern data tables with Soho-inspired pagination using Bootstrap 5</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Table 1: User Data -->
+        <div class="soho-card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-users me-2"></i> User Management</span>
+                <button class="action-btn"><i class="fas fa-user-plus me-1"></i> Add User</button>
+            </div>
+            <div class="card-body">
+                <div class="table-controls">
+                    <div class="records-per-page">
+                        <span>Show</span>
+                        <select id="perPage1">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="form-control" placeholder="Search users..." id="search1">
+                    </div>
+                </div>
+                
+                <table class="soho-table table-1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>#1</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=1" alt="Alex Johnson" class="avatar me-2">
+                                    <span>Alex Johnson</span>
+                                </div>
+                            </td>
+                            <td>alex@example.com</td>
+                            <td>Admin</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#2</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=2" alt="Maria Garcia" class="avatar me-2">
+                                    <span>Maria Garcia</span>
+                                </div>
+                            </td>
+                            <td>maria@example.com</td>
+                            <td>Editor</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#3</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=3" alt="David Smith" class="avatar me-2">
+                                    <span>David Smith</span>
+                                </div>
+                            </td>
+                            <td>david@example.com</td>
+                            <td>Viewer</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#4</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=4" alt="Sophie Williams" class="avatar me-2">
+                                    <span>Sophie Williams</span>
+                                </div>
+                            </td>
+                            <td>sophie@example.com</td>
+                            <td>Editor</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#5</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=5" alt="James Brown" class="avatar me-2">
+                                    <span>James Brown</span>
+                                </div>
+                            </td>
+                            <td>james@example.com</td>
+                            <td>Admin</td>
+                            <td><span class="status-badge status-inactive">Inactive</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#6</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=6" alt="Lisa Taylor" class="avatar me-2">
+                                    <span>Lisa Taylor</span>
+                                </div>
+                            </td>
+                            <td>lisa@example.com</td>
+                            <td>Viewer</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#7</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=7" alt="Robert Wilson" class="avatar me-2">
+                                    <span>Robert Wilson</span>
+                                </div>
+                            </td>
+                            <td>robert@example.com</td>
+                            <td>Editor</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#8</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=8" alt="Emma Martinez" class="avatar me-2">
+                                    <span>Emma Martinez</span>
+                                </div>
+                            </td>
+                            <td>emma@example.com</td>
+                            <td>Viewer</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#9</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=9" alt="Michael Davis" class="avatar me-2">
+                                    <span>Michael Davis</span>
+                                </div>
+                            </td>
+                            <td>michael@example.com</td>
+                            <td>Admin</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#10</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/40?img=10" alt="Olivia Anderson" class="avatar me-2">
+                                    <span>Olivia Anderson</span>
+                                </div>
+                            </td>
+                            <td>olivia@example.com</td>
+                            <td>Editor</td>
+                            <td><span class="status-badge status-inactive">Inactive</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pagination-info">Showing 1 to 10 of 50 entries</div>
+                <nav class="soho-pagination">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-left me-1"></i> Prev
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">...</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">10</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                Next <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Table 2: Product Data -->
+        <div class="soho-card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-boxes me-2"></i> Product Inventory</span>
+                <button class="action-btn"><i class="fas fa-plus-circle me-1"></i> Add Product</button>
+            </div>
+            <div class="card-body">
+                <div class="table-controls">
+                    <div class="records-per-page">
+                        <span>Show</span>
+                        <select id="perPage2">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search2">
+                    </div>
+                </div>
+                
+                <table class="soho-table table-2">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>#101</strong></td>
+                            <td>Wireless Headphones</td>
+                            <td>Electronics</td>
+                            <td><strong>$89.99</strong></td>
+                            <td><span class="status-badge status-pending">Low Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#102</strong></td>
+                            <td>Office Chair</td>
+                            <td>Furniture</td>
+                            <td><strong>$249.99</strong></td>
+                            <td><span class="status-badge status-pending">Low Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#103</strong></td>
+                            <td>Coffee Maker</td>
+                            <td>Appliances</td>
+                            <td><strong>$59.99</strong></td>
+                            <td><span class="status-badge status-pending">Low Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#104</strong></td>
+                            <td>Running Shoes</td>
+                            <td>Footwear</td>
+                            <td><strong>$79.99</strong></td>
+                            <td><span class="status-badge status-active">In Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#105</strong></td>
+                            <td>Laptop Backpack</td>
+                            <td>Accessories</td>
+                            <td><strong>$49.99</strong></td>
+                            <td><span class="status-badge status-active">In Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#106</strong></td>
+                            <td>Smart Watch</td>
+                            <td>Electronics</td>
+                            <td><strong>$199.99</strong></td>
+                            <td><span class="status-badge status-pending">Low Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#107</strong></td>
+                            <td>Desk Lamp</td>
+                            <td>Furniture</td>
+                            <td><strong>$34.99</strong></td>
+                            <td><span class="status-badge status-active">In Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#108</strong></td>
+                            <td>Blender</td>
+                            <td>Appliances</td>
+                            <td><strong>$89.99</strong></td>
+                            <td><span class="status-badge status-inactive">Out of Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#109</strong></td>
+                            <td>Yoga Mat</td>
+                            <td>Fitness</td>
+                            <td><strong>$29.99</strong></td>
+                            <td><span class="status-badge status-active">In Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#110</strong></td>
+                            <td>Water Bottle</td>
+                            <td>Accessories</td>
+                            <td><strong>$19.99</strong></td>
+                            <td><span class="status-badge status-active">In Stock</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pagination-info">Showing 1 to 10 of 42 entries</div>
+                <nav class="soho-pagination">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-left me-1"></i> Prev
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">...</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">8</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                Next <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Table 3: Order Data -->
+        <div class="soho-card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-shopping-cart me-2"></i> Order Management</span>
+                <button class="action-btn"><i class="fas fa-file-invoice me-1"></i> Generate Report</button>
+            </div>
+            <div class="card-body">
+                <div class="table-controls">
+                    <div class="records-per-page">
+                        <span>Show</span>
+                        <select id="perPage3">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="form-control" placeholder="Search orders..." id="search3">
+                    </div>
+                </div>
+                
+                <table class="soho-table table-3">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>#1001</strong></td>
+                            <td>John Miller</td>
+                            <td>2023-05-12</td>
+                            <td><strong>$245.99</strong></td>
+                            <td><span class="status-badge status-active">Delivered</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1002</strong></td>
+                            <td>Sarah Connor</td>
+                            <td>2023-05-15</td>
+                            <td><strong>$89.99</strong></td>
+                            <td><span class="status-badge status-pending">Shipped</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1003</strong></td>
+                            <td>Paul Rodriguez</td>
+                            <td>2023-05-16</td>
+                            <td><strong>$149.99</strong></td>
+                            <td><span class="status-badge status-pending">Processing</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1004</strong></td>
+                            <td>Linda Davis</td>
+                            <td>2023-05-18</td>
+                            <td><strong>$299.99</strong></td>
+                            <td><span class="status-badge status-active">Delivered</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1005</strong></td>
+                            <td>Kevin Wilson</td>
+                            <td>2023-05-20</td>
+                            <td><strong>$59.99</strong></td>
+                            <td><span class="status-badge status-inactive">Cancelled</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1006</strong></td>
+                            <td>Rachel Green</td>
+                            <td>2023-05-22</td>
+                            <td><strong>$199.99</strong></td>
+                            <td><span class="status-badge status-pending">Shipped</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1007</strong></td>
+                            <td>Mark Taylor</td>
+                            <td>2023-05-23</td>
+                            <td><strong>$129.99</strong></td>
+                            <td><span class="status-badge status-pending">Processing</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1008</strong></td>
+                            <td>Amanda Scott</td>
+                            <td>2023-05-25</td>
+                            <td><strong>$349.99</strong></td>
+                            <td><span class="status-badge status-active">Delivered</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1009</strong></td>
+                            <td>Brian Lee</td>
+                            <td>2023-05-26</td>
+                            <td><strong>$79.99</strong></td>
+                            <td><span class="status-badge status-pending">Shipped</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1010</strong></td>
+                            <td>Jessica Brown</td>
+                            <td>2023-05-28</td>
+                            <td><strong>$189.99</strong></td>
+                            <td><span class="status-badge status-pending">Processing</span></td>
+                            <td>
+                                <button class="action-btn action-btn-outline me-2" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn" title="View Details">
+                                    <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pagination-info">Showing 1 to 10 of 38 entries</div>
+                <nav class="soho-pagination">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-left me-1"></i> Prev
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">...</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">6</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                Next <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

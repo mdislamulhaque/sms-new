@@ -1,0 +1,262 @@
+:root {
+    --soho-primary: #2c3e50;
+    --soho-secondary: #7f8c8d;
+    --soho-accent: #e74c3c;
+    --soho-light: #ecf0f1;
+    --soho-border: #bdc3c7;
+}
+
+body {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--soho-primary) 0%, #34495e 100%);
+    color: white;
+    padding: 30px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.soho-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    border: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    padding: 8px;
+}
+
+.soho-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: var(--soho-primary);
+    color: white;
+    padding: 18px 25px;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+.soho-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.soho-table thead th {
+    background-color: var(--soho-light);
+    color: var(--soho-primary);
+    font-weight: 600;
+    padding: 15px 12px;
+    border-bottom: 2px solid var(--soho-border);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.soho-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.soho-table tbody tr:hover {
+    background-color: rgba(236, 240, 241, 0.5);
+}
+
+.soho-table tbody td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.table-1 tbody tr:nth-child(odd) {
+    background-color: rgba(52, 152, 219, 0.03);
+}
+
+.table-2 tbody tr:nth-child(even) {
+    background-color: rgba(46, 204, 113, 0.03);
+}
+
+.table-3 tbody tr:nth-child(4n+1) {
+    background-color: rgba(155, 89, 182, 0.03);
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-active {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #27ae60;
+}
+
+.status-pending {
+    background-color: rgba(241, 196, 15, 0.15);
+    color: #f39c12;
+}
+
+.status-inactive {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #c0392b;
+}
+
+/* Modern Soho Pagination Styles */
+.soho-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    margin-top: 10px;
+}
+
+.soho-pagination .pagination {
+    margin-bottom: 0;
+}
+
+.soho-pagination .page-item {
+    margin: 0 4px;
+}
+
+.soho-pagination .page-link {
+    border: none;
+    background-color: transparent;
+    color: var(--soho-primary);
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 42px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soho-pagination .page-link:hover {
+    background-color: var(--soho-light);
+    color: var(--soho-accent);
+    transform: translateY(-2px);
+}
+
+.soho-pagination .page-item.active .page-link {
+    background-color: var(--soho-primary);
+    color: white;
+    box-shadow: 0 4px 8px rgba(44, 62, 80, 0.2);
+}
+
+.soho-pagination .page-item.disabled .page-link {
+    color: var(--soho-border);
+    cursor: not-allowed;
+}
+
+.soho-pagination .page-item:first-child .page-link,
+.soho-pagination .page-item:last-child .page-link {
+    background-color: var(--soho-light);
+    font-weight: 600;
+    padding: 8px 20px;
+}
+
+.soho-pagination .page-item:first-child .page-link:hover,
+.soho-pagination .page-item:last-child .page-link:hover {
+    background-color: var(--soho-primary);
+    color: white;
+}
+
+.pagination-info {
+    text-align: center;
+    color: var(--soho-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    background-color: var(--soho-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.action-btn:hover {
+    background-color: var(--soho-accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+}
+
+.action-btn-outline {
+    background-color: transparent;
+    color: var(--soho-primary);
+    border: 1px solid var(--soho-primary);
+}
+
+.action-btn-outline:hover {
+    background-color: var(--soho-primary);
+    color: white;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--soho-light);
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.records-per-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.records-per-page select {
+    border: 1px solid var(--soho-border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: white;
+    color: var(--soho-primary);
+}
+
+@media (max-width: 768px) {
+    .soho-pagination {
+        flex-wrap: wrap;
+    }
+    
+    .table-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .soho-table thead th,
+    .soho-table tbody td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+}
