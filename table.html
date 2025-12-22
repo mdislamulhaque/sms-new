@@ -3,753 +3,852 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soho Modern DataTables</title>
+    <title>Responsive Tables - Bootstrap 5</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Soho CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="table.css">
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <h1 class="display-5 fw-bold"><i class="fas fa-table me-2"></i> Soho Modern DataTables</h1>
-            <p class="lead">Stylish, modern data tables with Soho-inspired pagination using Bootstrap 5</p>
-        </div>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="table-header">
+            <div class="container">
+                <h1><i class="fas fa-table me-2"></i> Responsive Tables</h1>
+                <p class="subtitle">Modern, mobile-friendly tables with Bootstrap 5</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container main-container">
+            <!-- Table 1: Standard Responsive Table -->
+            <section class="table-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-table-list me-2"></i> 1. Standard Responsive Table</h2>
+                    <p class="section-description">Table with horizontal scroll on mobile devices</p>
+                </div>
+                
+                <div class="table-card">
+                    <div class="card-header">
+                        <h3>Employee Directory</h3>
+                        <div class="table-actions">
+                            <button class="btn-action"><i class="fas fa-download"></i> Export</button>
+                            <button class="btn-action primary"><i class="fas fa-user-plus"></i> Add Employee</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover modern-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>ID</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>Name</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>Department</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>Position</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>Email</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>Phone</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-header-content">
+                                            <span>Status</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="ID">#001</td>
+                                    <td data-label="Name">
+                                        <div class="user-info">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John" class="user-avatar">
+                                            <div class="user-details">
+                                                <strong>John Smith</strong>
+                                                <small>Joined: 2022-03-15</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Department">Engineering</td>
+                                    <td data-label="Position">Senior Developer</td>
+                                    <td data-label="Email">john.smith@example.com</td>
+                                    <td data-label="Phone">+1 (555) 123-4567</td>
+                                    <td data-label="Status">
+                                        <span class="status-badge active">Active</span>
+                                    </td>
+                                    <td data-label="Actions">
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ID">#002</td>
+                                    <td data-label="Name">
+                                        <div class="user-info">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="user-avatar">
+                                            <div class="user-details">
+                                                <strong>Sarah Johnson</strong>
+                                                <small>Joined: 2021-08-22</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Department">Marketing</td>
+                                    <td data-label="Position">Marketing Manager</td>
+                                    <td data-label="Email">sarah.j@example.com</td>
+                                    <td data-label="Phone">+1 (555) 987-6543</td>
+                                    <td data-label="Status">
+                                        <span class="status-badge active">Active</span>
+                                    </td>
+                                    <td data-label="Actions">
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ID">#003</td>
+                                    <td data-label="Name">
+                                        <div class="user-info">
+                                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Robert" class="user-avatar">
+                                            <div class="user-details">
+                                                <strong>Robert Chen</strong>
+                                                <small>Joined: 2023-01-10</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Department">Sales</td>
+                                    <td data-label="Position">Sales Executive</td>
+                                    <td data-label="Email">robert.chen@example.com</td>
+                                    <td data-label="Phone">+1 (555) 456-7890</td>
+                                    <td data-label="Status">
+                                        <span class="status-badge pending">On Leave</span>
+                                    </td>
+                                    <td data-label="Actions">
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ID">#004</td>
+                                    <td data-label="Name">
+                                        <div class="user-info">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Maria" class="user-avatar">
+                                            <div class="user-details">
+                                                <strong>Maria Garcia</strong>
+                                                <small>Joined: 2020-11-05</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Department">HR</td>
+                                    <td data-label="Position">HR Manager</td>
+                                    <td data-label="Email">maria.g@example.com</td>
+                                    <td data-label="Phone">+1 (555) 321-0987</td>
+                                    <td data-label="Status">
+                                        <span class="status-badge active">Active</span>
+                                    </td>
+                                    <td data-label="Actions">
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ID">#005</td>
+                                    <td data-label="Name">
+                                        <div class="user-info">
+                                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David" class="user-avatar">
+                                            <div class="user-details">
+                                                <strong>David Wilson</strong>
+                                                <small>Joined: 2022-06-30</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Department">Finance</td>
+                                    <td data-label="Position">Financial Analyst</td>
+                                    <td data-label="Email">david.w@example.com</td>
+                                    <td data-label="Phone">+1 (555) 654-3210</td>
+                                    <td data-label="Status">
+                                        <span class="status-badge inactive">Inactive</span>
+                                    </td>
+                                    <td data-label="Actions">
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-footer">
+                        <div class="table-info">
+                            Showing 1 to 5 of 25 entries
+                        </div>
+                        <nav class="table-pagination">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table 2: Card View on Mobile -->
+            <section class="table-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-mobile-alt me-2"></i> 2. Card View on Mobile</h2>
+                    <p class="section-description">Table transforms into cards on small screens</p>
+                </div>
+                
+                <div class="table-card">
+                    <div class="card-header">
+                        <h3>Product Inventory</h3>
+                        <div class="table-controls">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search products...">
+                            </div>
+                            <select class="form-select">
+                                <option>All Categories</option>
+                                <option>Electronics</option>
+                                <option>Clothing</option>
+                                <option>Home & Garden</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Table View -->
+                    <div class="table-responsive d-none d-md-block">
+                        <table class="table table-striped modern-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product ID</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Stock</th>
+                                    <th scope="col">Rating</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#P1001</td>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Headphones" class="product-image">
+                                            <div class="product-details">
+                                                <strong>Wireless Headphones</strong>
+                                                <small>Premium sound quality</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td>$89.99</td>
+                                    <td>
+                                        <div class="stock-info">
+                                            <span class="stock-value">45</span>
+                                            <div class="stock-bar">
+                                                <div class="stock-fill high"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span class="rating-text">4.5</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                            <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#P1002</td>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Watch" class="product-image">
+                                            <div class="product-details">
+                                                <strong>Smart Watch</strong>
+                                                <small>Fitness tracker</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td>$199.99</td>
+                                    <td>
+                                        <div class="stock-info">
+                                            <span class="stock-value">22</span>
+                                            <div class="stock-bar">
+                                                <div class="stock-fill medium"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">4.0</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                            <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#P1003</td>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Speaker" class="product-image">
+                                            <div class="product-details">
+                                                <strong>Bluetooth Speaker</strong>
+                                                <small>Portable waterproof</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td>$59.99</td>
+                                    <td>
+                                        <div class="stock-info">
+                                            <span class="stock-value">78</span>
+                                            <div class="stock-bar">
+                                                <div class="stock-fill high"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <span class="rating-text">5.0</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                            <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#P1004</td>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Laptop" class="product-image">
+                                            <div class="product-details">
+                                                <strong>Gaming Laptop</strong>
+                                                <small>High performance</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td>$1299.99</td>
+                                    <td>
+                                        <div class="stock-info">
+                                            <span class="stock-value">8</span>
+                                            <div class="stock-bar">
+                                                <div class="stock-fill low"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span class="rating-text">4.5</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                            <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Mobile Card View -->
+                    <div class="mobile-cards d-md-none">
+                        <div class="product-card">
+                            <div class="card-header">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Headphones" class="product-image">
+                                    <div class="product-details">
+                                        <strong>Wireless Headphones</strong>
+                                        <small>#P1001 • Electronics</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-row">
+                                    <span class="card-label">Price:</span>
+                                    <span class="card-value">$89.99</span>
+                                </div>
+                                <div class="card-row">
+                                    <span class="card-label">Stock:</span>
+                                    <div class="stock-info">
+                                        <span class="stock-value">45</span>
+                                        <div class="stock-bar">
+                                            <div class="stock-fill high"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-row">
+                                    <span class="card-label">Rating:</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="rating-text">4.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-header">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Watch" class="product-image">
+                                    <div class="product-details">
+                                        <strong>Smart Watch</strong>
+                                        <small>#P1002 • Electronics</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-row">
+                                    <span class="card-label">Price:</span>
+                                    <span class="card-value">$199.99</span>
+                                </div>
+                                <div class="card-row">
+                                    <span class="card-label">Stock:</span>
+                                    <div class="stock-info">
+                                        <span class="stock-value">22</span>
+                                        <div class="stock-bar">
+                                            <div class="stock-fill medium"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-row">
+                                    <span class="card-label">Rating:</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-header">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Speaker" class="product-image">
+                                    <div class="product-details">
+                                        <strong>Bluetooth Speaker</strong>
+                                        <small>#P1003 • Electronics</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-row">
+                                    <span class="card-label">Price:</span>
+                                    <span class="card-value">$59.99</span>
+                                </div>
+                                <div class="card-row">
+                                    <span class="card-label">Stock:</span>
+                                    <div class="stock-info">
+                                        <span class="stock-value">78</span>
+                                        <div class="stock-bar">
+                                            <div class="stock-fill high"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-row">
+                                    <span class="card-label">Rating:</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <i class="fas fa-star filled"></i>
+                                        <span class="rating-text">5.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn-action small"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn-action small outline"><i class="fas fa-chart-bar"></i> Stats</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-footer">
+                        <div class="table-info">
+                            Showing 4 products
+                        </div>
+                        <div class="table-actions">
+                            <button class="btn-action"><i class="fas fa-plus"></i> Add Product</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table 3: Stacked Cells on Mobile -->
+            <section class="table-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list-alt me-2"></i> 3. Stacked Cells on Mobile</h2>
+                    <p class="section-description">Table cells stack vertically on small screens</p>
+                </div>
+                
+                <div class="table-card">
+                    <div class="card-header">
+                        <h3>Recent Orders</h3>
+                        <div class="date-filter">
+                            <i class="fas fa-calendar"></i>
+                            <span>Last 30 days</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-stacked">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Payment</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Order ID">
+                                        <strong>#ORD-7821</strong>
+                                    </td>
+                                    <td data-label="Customer">
+                                        <div class="customer-info">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="customer-avatar">
+                                            <div>
+                                                <strong>Michael Brown</strong>
+                                                <small>michael@example.com</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Date">
+                                        <div class="date-info">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2023-10-15
+                                        </div>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <strong>$245.99</strong>
+                                    </td>
+                                    <td data-label="Payment">
+                                        <div class="payment-method">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <span>Visa •••• 4321</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="order-status delivered">Delivered</span>
+                                    </td>
+                                    <td data-label="Details">
+                                        <button class="btn-action small"><i class="fas fa-eye"></i> View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Order ID">
+                                        <strong>#ORD-7820</strong>
+                                    </td>
+                                    <td data-label="Customer">
+                                        <div class="customer-info">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="customer-avatar">
+                                            <div>
+                                                <strong>Emily Wilson</strong>
+                                                <small>emily@example.com</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Date">
+                                        <div class="date-info">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2023-10-14
+                                        </div>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <strong>$129.50</strong>
+                                    </td>
+                                    <td data-label="Payment">
+                                        <div class="payment-method">
+                                            <i class="fab fa-cc-paypal"></i>
+                                            <span>PayPal</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="order-status shipped">Shipped</span>
+                                    </td>
+                                    <td data-label="Details">
+                                        <button class="btn-action small"><i class="fas fa-eye"></i> View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Order ID">
+                                        <strong>#ORD-7819</strong>
+                                    </td>
+                                    <td data-label="Customer">
+                                        <div class="customer-info">
+                                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer" class="customer-avatar">
+                                            <div>
+                                                <strong>David Lee</strong>
+                                                <small>david@example.com</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Date">
+                                        <div class="date-info">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2023-10-13
+                                        </div>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <strong>$89.99</strong>
+                                    </td>
+                                    <td data-label="Payment">
+                                        <div class="payment-method">
+                                            <i class="fab fa-cc-mastercard"></i>
+                                            <span>Mastercard •••• 8765</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="order-status processing">Processing</span>
+                                    </td>
+                                    <td data-label="Details">
+                                        <button class="btn-action small"><i class="fas fa-eye"></i> View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Order ID">
+                                        <strong>#ORD-7818</strong>
+                                    </td>
+                                    <td data-label="Customer">
+                                        <div class="customer-info">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="customer-avatar">
+                                            <div>
+                                                <strong>Sophia Martinez</strong>
+                                                <small>sophia@example.com</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Date">
+                                        <div class="date-info">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2023-10-12
+                                        </div>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <strong>$299.99</strong>
+                                    </td>
+                                    <td data-label="Payment">
+                                        <div class="payment-method">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            <span>Cash on Delivery</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="order-status cancelled">Cancelled</span>
+                                    </td>
+                                    <td data-label="Details">
+                                        <button class="btn-action small"><i class="fas fa-eye"></i> View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Order ID">
+                                        <strong>#ORD-7817</strong>
+                                    </td>
+                                    <td data-label="Customer">
+                                        <div class="customer-info">
+                                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="customer-avatar">
+                                            <div>
+                                                <strong>James Taylor</strong>
+                                                <small>james@example.com</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Date">
+                                        <div class="date-info">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2023-10-11
+                                        </div>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <strong>$450.00</strong>
+                                    </td>
+                                    <td data-label="Payment">
+                                        <div class="payment-method">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <span>Visa •••• 1234</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="order-status delivered">Delivered</span>
+                                    </td>
+                                    <td data-label="Details">
+                                        <button class="btn-action small"><i class="fas fa-eye"></i> View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-footer">
+                        <div class="table-info">
+                            <div class="summary-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Orders:</span>
+                                    <span class="stat-value">5</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Revenue:</span>
+                                    <span class="stat-value">$1,215.47</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Avg. Order:</span>
+                                    <span class="stat-value">$243.09</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-action primary"><i class="fas fa-download"></i> Export Report</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="table-footer-section">
+            <div class="container">
+                <p>© 2023 Responsive Tables. Three different approaches to mobile-friendly tables.</p>
+                <div class="footer-info">
+                    <div class="info-item">
+                        <i class="fas fa-desktop"></i>
+                        <span>Desktop: Horizontal scroll</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-tablet-alt"></i>
+                        <span>Tablet: Responsive columns</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile: Stacked/Card view</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    
-    <div class="container">
-        <!-- Table 1: User Data -->
-        <div class="soho-card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span><i class="fas fa-users me-2"></i> User Management</span>
-                <button class="action-btn"><i class="fas fa-user-plus me-1"></i> Add User</button>
-            </div>
-            <div class="card-body">
-                <div class="table-controls">
-                    <div class="records-per-page">
-                        <span>Show</span>
-                        <select id="perPage1">
-                            <option value="5">5</option>
-                            <option value="10" selected>10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                        </select>
-                        <span>entries</span>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" class="form-control" placeholder="Search users..." id="search1">
-                    </div>
-                </div>
-                
-                <table class="soho-table table-1">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>User</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>#1</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=1" alt="Alex Johnson" class="avatar me-2">
-                                    <span>Alex Johnson</span>
-                                </div>
-                            </td>
-                            <td>alex@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status-badge status-active">Active</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#2</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=2" alt="Maria Garcia" class="avatar me-2">
-                                    <span>Maria Garcia</span>
-                                </div>
-                            </td>
-                            <td>maria@example.com</td>
-                            <td>Editor</td>
-                            <td><span class="status-badge status-active">Active</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#3</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=3" alt="David Smith" class="avatar me-2">
-                                    <span>David Smith</span>
-                                </div>
-                            </td>
-                            <td>david@example.com</td>
-                            <td>Viewer</td>
-                            <td><span class="status-badge status-pending">Pending</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#4</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=4" alt="Sophie Williams" class="avatar me-2">
-                                    <span>Sophie Williams</span>
-                                </div>
-                            </td>
-                            <td>sophie@example.com</td>
-                            <td>Editor</td>
-                            <td><span class="status-badge status-active">Active</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#5</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=5" alt="James Brown" class="avatar me-2">
-                                    <span>James Brown</span>
-                                </div>
-                            </td>
-                            <td>james@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status-badge status-inactive">Inactive</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#6</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=6" alt="Lisa Taylor" class="avatar me-2">
-                                    <span>Lisa Taylor</span>
-                                </div>
-                            </td>
-                            <td>lisa@example.com</td>
-                            <td>Viewer</td>
-                            <td><span class="status-badge status-active">Active</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#7</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=7" alt="Robert Wilson" class="avatar me-2">
-                                    <span>Robert Wilson</span>
-                                </div>
-                            </td>
-                            <td>robert@example.com</td>
-                            <td>Editor</td>
-                            <td><span class="status-badge status-pending">Pending</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#8</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=8" alt="Emma Martinez" class="avatar me-2">
-                                    <span>Emma Martinez</span>
-                                </div>
-                            </td>
-                            <td>emma@example.com</td>
-                            <td>Viewer</td>
-                            <td><span class="status-badge status-active">Active</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#9</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=9" alt="Michael Davis" class="avatar me-2">
-                                    <span>Michael Davis</span>
-                                </div>
-                            </td>
-                            <td>michael@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status-badge status-active">Active</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#10</strong></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://i.pravatar.cc/40?img=10" alt="Olivia Anderson" class="avatar me-2">
-                                    <span>Olivia Anderson</span>
-                                </div>
-                            </td>
-                            <td>olivia@example.com</td>
-                            <td>Editor</td>
-                            <td><span class="status-badge status-inactive">Inactive</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="pagination-info">Showing 1 to 10 of 50 entries</div>
-                <nav class="soho-pagination">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#">
-                                <i class="fas fa-chevron-left me-1"></i> Prev
-                            </a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">5</a>
-                        </li>
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">10</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                Next <i class="fas fa-chevron-right ms-1"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        
-        <!-- Table 2: Product Data -->
-        <div class="soho-card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span><i class="fas fa-boxes me-2"></i> Product Inventory</span>
-                <button class="action-btn"><i class="fas fa-plus-circle me-1"></i> Add Product</button>
-            </div>
-            <div class="card-body">
-                <div class="table-controls">
-                    <div class="records-per-page">
-                        <span>Show</span>
-                        <select id="perPage2">
-                            <option value="5">5</option>
-                            <option value="10" selected>10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                        </select>
-                        <span>entries</span>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" class="form-control" placeholder="Search products..." id="search2">
-                    </div>
-                </div>
-                
-                <table class="soho-table table-2">
-                    <thead>
-                        <tr>
-                            <th>Product ID</th>
-                            <th>Product Name</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Stock</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>#101</strong></td>
-                            <td>Wireless Headphones</td>
-                            <td>Electronics</td>
-                            <td><strong>$89.99</strong></td>
-                            <td><span class="status-badge status-pending">Low Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#102</strong></td>
-                            <td>Office Chair</td>
-                            <td>Furniture</td>
-                            <td><strong>$249.99</strong></td>
-                            <td><span class="status-badge status-pending">Low Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#103</strong></td>
-                            <td>Coffee Maker</td>
-                            <td>Appliances</td>
-                            <td><strong>$59.99</strong></td>
-                            <td><span class="status-badge status-pending">Low Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#104</strong></td>
-                            <td>Running Shoes</td>
-                            <td>Footwear</td>
-                            <td><strong>$79.99</strong></td>
-                            <td><span class="status-badge status-active">In Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#105</strong></td>
-                            <td>Laptop Backpack</td>
-                            <td>Accessories</td>
-                            <td><strong>$49.99</strong></td>
-                            <td><span class="status-badge status-active">In Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#106</strong></td>
-                            <td>Smart Watch</td>
-                            <td>Electronics</td>
-                            <td><strong>$199.99</strong></td>
-                            <td><span class="status-badge status-pending">Low Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#107</strong></td>
-                            <td>Desk Lamp</td>
-                            <td>Furniture</td>
-                            <td><strong>$34.99</strong></td>
-                            <td><span class="status-badge status-active">In Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#108</strong></td>
-                            <td>Blender</td>
-                            <td>Appliances</td>
-                            <td><strong>$89.99</strong></td>
-                            <td><span class="status-badge status-inactive">Out of Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#109</strong></td>
-                            <td>Yoga Mat</td>
-                            <td>Fitness</td>
-                            <td><strong>$29.99</strong></td>
-                            <td><span class="status-badge status-active">In Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#110</strong></td>
-                            <td>Water Bottle</td>
-                            <td>Accessories</td>
-                            <td><strong>$19.99</strong></td>
-                            <td><span class="status-badge status-active">In Stock</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="pagination-info">Showing 1 to 10 of 42 entries</div>
-                <nav class="soho-pagination">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class="fas fa-chevron-left me-1"></i> Prev
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">5</a>
-                        </li>
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">8</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                Next <i class="fas fa-chevron-right ms-1"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        
-        <!-- Table 3: Order Data -->
-        <div class="soho-card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span><i class="fas fa-shopping-cart me-2"></i> Order Management</span>
-                <button class="action-btn"><i class="fas fa-file-invoice me-1"></i> Generate Report</button>
-            </div>
-            <div class="card-body">
-                <div class="table-controls">
-                    <div class="records-per-page">
-                        <span>Show</span>
-                        <select id="perPage3">
-                            <option value="5">5</option>
-                            <option value="10" selected>10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                        </select>
-                        <span>entries</span>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" class="form-control" placeholder="Search orders..." id="search3">
-                    </div>
-                </div>
-                
-                <table class="soho-table table-3">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>#1001</strong></td>
-                            <td>John Miller</td>
-                            <td>2023-05-12</td>
-                            <td><strong>$245.99</strong></td>
-                            <td><span class="status-badge status-active">Delivered</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1002</strong></td>
-                            <td>Sarah Connor</td>
-                            <td>2023-05-15</td>
-                            <td><strong>$89.99</strong></td>
-                            <td><span class="status-badge status-pending">Shipped</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1003</strong></td>
-                            <td>Paul Rodriguez</td>
-                            <td>2023-05-16</td>
-                            <td><strong>$149.99</strong></td>
-                            <td><span class="status-badge status-pending">Processing</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1004</strong></td>
-                            <td>Linda Davis</td>
-                            <td>2023-05-18</td>
-                            <td><strong>$299.99</strong></td>
-                            <td><span class="status-badge status-active">Delivered</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1005</strong></td>
-                            <td>Kevin Wilson</td>
-                            <td>2023-05-20</td>
-                            <td><strong>$59.99</strong></td>
-                            <td><span class="status-badge status-inactive">Cancelled</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1006</strong></td>
-                            <td>Rachel Green</td>
-                            <td>2023-05-22</td>
-                            <td><strong>$199.99</strong></td>
-                            <td><span class="status-badge status-pending">Shipped</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1007</strong></td>
-                            <td>Mark Taylor</td>
-                            <td>2023-05-23</td>
-                            <td><strong>$129.99</strong></td>
-                            <td><span class="status-badge status-pending">Processing</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1008</strong></td>
-                            <td>Amanda Scott</td>
-                            <td>2023-05-25</td>
-                            <td><strong>$349.99</strong></td>
-                            <td><span class="status-badge status-active">Delivered</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1009</strong></td>
-                            <td>Brian Lee</td>
-                            <td>2023-05-26</td>
-                            <td><strong>$79.99</strong></td>
-                            <td><span class="status-badge status-pending">Shipped</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>#1010</strong></td>
-                            <td>Jessica Brown</td>
-                            <td>2023-05-28</td>
-                            <td><strong>$189.99</strong></td>
-                            <td><span class="status-badge status-pending">Processing</span></td>
-                            <td>
-                                <button class="action-btn action-btn-outline me-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="action-btn" title="View Details">
-                                    <i class="fas fa-file-invoice"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="pagination-info">Showing 1 to 10 of 38 entries</div>
-                <nav class="soho-pagination">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class="fas fa-chevron-left me-1"></i> Prev
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">6</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                Next <i class="fas fa-chevron-right ms-1"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-    
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="tables.js"></script>
 </body>
 </html>
