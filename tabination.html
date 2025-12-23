@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Tabination Designs</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --success-color: #2ecc71;
+            --danger-color: #e74c3c;
+            --warning-color: #f39c12;
+            --info-color: #3498db;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            padding-bottom: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+        }
+        
+        .design-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .demo-area {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin-top: 20px;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background-color: white;
+        }
+        
+        /* Custom Tab Styles */
+        .custom-tabs .nav-link {
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+            border: 1px solid #dee2e6;
+            border-bottom: none;
+            background-color: #f8f9fa;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-tabs .nav-link:hover {
+            background-color: #e9ecef;
+        }
+        
+        .custom-tabs .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* Rounded Tabs */
+        .rounded-tabs .nav-link {
+            border-radius: 50px 50px 0 0;
+            margin-right: 5px;
+            padding: 10px 25px;
+            background-color: #f1f1f1;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+        
+        .rounded-tabs .nav-link:hover {
+            background-color: #e2e2e2;
+        }
+        
+        .rounded-tabs .nav-link.active {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        /* Pill Tabs */
+        .pill-tabs .nav-link {
+            border-radius: 50px;
+            margin-right: 10px;
+            padding: 10px 25px;
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .pill-tabs .nav-link:hover {
+            background-color: #f0f5ff;
+        }
+        
+        .pill-tabs .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Icon Tabs */
+        .icon-tabs .nav-link {
+            padding: 12px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-tabs .nav-link i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .icon-tabs .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .icon-tabs .nav-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+        
+        /* Vertical Tabs */
+        .vertical-tabs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .vertical-tabs .nav {
+            flex: 0 0 200px;
+            border-right: 1px solid #dee2e6;
+            margin-right: 20px;
+        }
+        
+        .vertical-tabs .nav-link {
+            text-align: left;
+            border-radius: 5px 0 0 5px;
+            margin-bottom: 5px;
+            border: 1px solid #dee2e6;
+            border-right: none;
+            background-color: #f8f9fa;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+        
+        .vertical-tabs .nav-link:hover {
+            background-color: #e9ecef;
+        }
+        
+        .vertical-tabs .nav-link.active {
+            background-color: var(--info-color);
+            color: white;
+            border-color: var(--info-color);
+        }
+        
+        /* Custom Pagination */
+        .custom-pagination .page-link {
+            color: var(--primary-color);
+            border: 1px solid #dee2e6;
+            margin: 0 3px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-pagination .page-link:hover {
+            background-color: #f0f5ff;
+            color: var(--secondary-color);
+        }
+        
+        .custom-pagination .page-item.active .page-link {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Rounded Pagination */
+        .rounded-pagination .page-link {
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            border: 1px solid #dee2e6;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+        
+        .rounded-pagination .page-link:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .rounded-pagination .page-item.active .page-link {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+            color: white;
+        }
+        
+        /* Icon Pagination */
+        .icon-pagination .page-link {
+            border: none;
+            color: #6c757d;
+            background-color: transparent;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-pagination .page-link:hover {
+            color: var(--primary-color);
+            background-color: transparent;
+        }
+        
+        .icon-pagination .page-item.active .page-link {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Combined Tabination */
+        .combined-tabination {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .combined-tabination .nav-tabs {
+            padding: 15px 15px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .combined-tabination .tab-content {
+            border: none;
+            min-height: 200px;
+        }
+        
+        .combined-tabination .pagination-container {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        @media (max-width: 768px) {
+            .vertical-tabs .nav {
+                flex: 0 0 100%;
+                border-right: none;
+                border-bottom: 1px solid #dee2e6;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .vertical-tabs .nav-link {
+                border-radius: 5px 5px 0 0;
+                border: 1px solid #dee2e6;
+                border-bottom: none;
+            }
+            
+            .rounded-pagination .page-link {
+                width: 40px;
+                height: 40px;
+                margin: 0 2px;
+            }
+            
+            .design-card {
+                padding: 20px;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 14px;
+            padding: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .badge-custom {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="container">
+            <h1 class="text-center fw-bold">Bootstrap 5 Tabination Designs</h1>
+            <p class="text-center lead">ট্যাব এবং পেজিনেশনের বিভিন্ন ধরণের ডিজাইন</p>
+            <div class="text-center mt-3">
+                <span class="badge bg-light text-primary me-2">Bootstrap 5</span>
+                <span class="badge bg-light text-primary me-2">Responsive</span>
+                <span class="badge bg-light text-primary">Custom Tabs</span>
+                <span class="badge bg-light text-primary">Pagination</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Standard Bootstrap Tabs -->
+        <section>
+            <h2 class="section-title">1. Standard Bootstrap Tabs</h2>
+            <div class="design-card">
+                <h4>বেসিক ট্যাব <span class="badge-custom">Default</span></h4>
+                <p>Bootstrap 5 এর ডিফল্ট ট্যাব ডিজাইন।</p>
+                
+                <div class="demo-area">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">হোম</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">প্রোফাইল</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">যোগাযোগ</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">সেটিংস</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h5>হোম ট্যাব</h5>
+                            <p>এটি হোম ট্যাবের কন্টেন্ট। এখানে আপনি আপনার প্রধান তথ্য দেখতে পাবেন।</p>
+                            <p>ট্যাব ব্যবহার করে আপনি বিভিন্ন সেকশনের মধ্যে সুন্দরভাবে নেভিগেট করতে পারেন।</p>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h5>প্রোফাইল ট্যাব</h5>
+                            <p>এটি প্রোফাইল ট্যাব। ব্যবহারকারীর প্রোফাইল সম্পর্কিত তথ্য এখানে দেখানো হয়।</p>
+                            <ul>
+                                <li>নাম: জন ডো</li>
+                                <li>ইমেইল: johndoe@example.com</li>
+                                <li>যোগদান তারিখ: জানুয়ারি ২০২৩</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <h5>যোগাযোগ ট্যাব</h5>
+                            <p>যোগাযোগের তথ্য এখানে রয়েছে। আমাদের সাথে যোগাযোগের বিভিন্ন মাধ্যম নিচে দেওয়া হলো।</p>
+                            <div class="mt-3">
+                                <button class="btn btn-primary me-2"><i class="fas fa-phone"></i> কল করুন</button>
+                                <button class="btn btn-success me-2"><i class="fas fa-envelope"></i> ইমেইল করুন</button>
+                                <button class="btn btn-info"><i class="fas fa-map-marker-alt"></i> লোকেশন</button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                            <h5>সেটিংস ট্যাব</h5>
+                            <p>সিস্টেম সেটিংস পরিবর্তন করুন।</p>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="notifications" checked>
+                                <label class="form-check-label" for="notifications">নোটিফিকেশন চালু করুন</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="privacy" checked>
+                                <label class="form-check-label" for="privacy">প্রাইভেসি সেটিংস</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="updates">
+                                <label class="form-check-label" for="updates">অটো আপডেট</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-block">
+&lt;!-- Bootstrap Default Tabs --&gt;
+&lt;ul class="nav nav-tabs" id="myTab" role="tablist"&gt;
+    &lt;li class="nav-item" role="presentation"&gt;
+        &lt;button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"&gt;হোম&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item" role="presentation"&gt;
+        &lt;button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"&gt;প্রোফাইল&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item" role="presentation"&gt;
+        &lt;button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"&gt;যোগাযোগ&lt;/button&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="tab-content" id="myTabContent"&gt;
+    &lt;div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"&gt;
+        &lt;h5&gt;হোম ট্যাব&lt;/h5&gt;
+        &lt;p&gt;হোম ট্যাবের কন্টেন্ট...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"&gt;
+        &lt;h5&gt;প্রোফাইল ট্যাব&lt;/h5&gt;
+        &lt;p&gt;প্রোফাইল ট্যাবের কন্টেন্ট...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"&gt;
+        &lt;h5&gt;যোগাযোগ ট্যাব&lt;/h5&gt;
+        &lt;p&gt;যোগাযোগ ট্যাবের কন্টেন্ট...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </div>
+            </div>
+        </section>
+        
+        <!-- Custom Styled Tabs -->
+        <section>
+            <h2 class="section-title">2. কাস্টম স্টাইল ট্যাব</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="design-card">
+                        <h4>রাউন্ডেড ট্যাব <span class="badge-custom">Custom</span></h4>
+                        <p>গোলাকার কোণ বিশিষ্ট ট্যাব ডিজাইন।</p>
+                        
+                        <div class="demo-area">
+                            <ul class="nav nav-tabs rounded-tabs" id="roundedTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="rtab1-tab" data-bs-toggle="tab" data-bs-target="#rtab1" type="button" role="tab" aria-controls="rtab1" aria-selected="true">প্রথম</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="rtab2-tab" data-bs-toggle="tab" data-bs-target="#rtab2" type="button" role="tab" aria-controls="rtab2" aria-selected="false">দ্বিতীয়</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="rtab3-tab" data-bs-toggle="tab" data-bs-target="#rtab3" type="button" role="tab" aria-controls="rtab3" aria-selected="false">তৃতীয়</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="rtab1" role="tabpanel" aria-labelledby="rtab1-tab">
+                                    <p>প্রথম রাউন্ডেড ট্যাবের কন্টেন্ট। এই ট্যাবের ডিজাইন সম্পূর্ণ কাস্টম সিএসএস দ্বারা তৈরি।</p>
+                                </div>
+                                <div class="tab-pane fade" id="rtab2" role="tabpanel" aria-labelledby="rtab2-tab">
+                                    <p>দ্বিতীয় রাউন্ডেড ট্যাবের কন্টেন্ট। প্রতিটি ট্যাবে আলাদা আলাদা তথ্য থাকতে পারে।</p>
+                                </div>
+                                <div class="tab-pane fade" id="rtab3" role="tabpanel" aria-labelledby="rtab3-tab">
+                                    <p>তৃতীয় রাউন্ডেড ট্যাবের কন্টেন্ট। ট্যাব পরিবর্তন করার জন্য উপরের ট্যাব গুলোতে ক্লিক করুন।</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-block">
+&lt;style&gt;
+.rounded-tabs .nav-link {
+    border-radius: 50px 50px 0 0;
+    padding: 10px 25px;
+    background-color: #f1f1f1;
+    color: #495057;
+}
+.rounded-tabs .nav-link.active {
+    background-color: #2ecc71;
+    color: white;
+}
+&lt;/style&gt;
+
+&lt;ul class="nav nav-tabs rounded-tabs" id="roundedTab" role="tablist"&gt;
+    &lt;li class="nav-item"&gt;
+        &lt;button class="nav-link active" id="rtab1-tab" data-bs-toggle="tab" data-bs-target="#rtab1" type="button"&gt;প্রথম&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;!-- আরো ট্যাব --&gt;
+&lt;/ul&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="design-card">
+                        <h4>পিল ট্যাব <span class="badge-custom">Custom</span></h4>
+                        <p>বোতামের মতো দেখতে পিল ট্যাব ডিজাইন।</p>
+                        
+                        <div class="demo-area">
+                            <ul class="nav nav-tabs pill-tabs" id="pillTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="ptab1-tab" data-bs-toggle="tab" data-bs-target="#ptab1" type="button" role="tab" aria-controls="ptab1" aria-selected="true">বাংলাদেশ</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="ptab2-tab" data-bs-toggle="tab" data-bs-target="#ptab2" type="button" role="tab" aria-controls="ptab2" aria-selected="false">ভারত</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="ptab3-tab" data-bs-toggle="tab" data-bs-target="#ptab3" type="button" role="tab" aria-controls="ptab3" aria-selected="false">পাকিস্তান</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="ptab1" role="tabpanel" aria-labelledby="ptab1-tab">
+                                    <p>বাংলাদেশ দক্ষিণ এশিয়ার একটি উন্নয়নশীল রাষ্ট্র। রাজধানী ঢাকা।</p>
+                                </div>
+                                <div class="tab-pane fade" id="ptab2" role="tabpanel" aria-labelledby="ptab2-tab">
+                                    <p>ভারত দক্ষিণ এশিয়ার বৃহত্তম দেশ। রাজধানী নয়াদিল্লি।</p>
+                                </div>
+                                <div class="tab-pane fade" id="ptab3" role="tabpanel" aria-labelledby="ptab3-tab">
+                                    <p>পাকিস্তান দক্ষিণ এশিয়ার একটি দেশ। রাজধানী ইসলামাবাদ।</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-block">
+&lt;style&gt;
+.pill-tabs .nav-link {
+    border-radius: 50px;
+    margin-right: 10px;
+    padding: 10px 25px;
+    background-color: white;
+    color: #4361ee;
+    border: 2px solid #4361ee;
+}
+.pill-tabs .nav-link.active {
+    background-color: #4361ee;
+    color: white;
+}
+&lt;/style&gt;
+
+&lt;ul class="nav nav-tabs pill-tabs" id="pillTab" role="tablist"&gt;
+    &lt;li class="nav-item"&gt;
+        &lt;button class="nav-link active" id="ptab1-tab" data-bs-toggle="tab" data-bs-target="#ptab1" type="button"&gt;বাংলাদেশ&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;!-- আরো ট্যাব --&gt;
+&lt;/ul&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Icon Tabs and Vertical Tabs -->
+        <section>
+            <h2 class="section-title">3. আইকন এবং ভার্টিকাল ট্যাব</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="design-card">
+                        <h4>আইকন ট্যাব <span class="badge-custom">Icons</span></h4>
+                        <p>আইকন সহ ট্যাব ডিজাইন।</p>
+                        
+                        <div class="demo-area">
+                            <ul class="nav nav-tabs icon-tabs" id="iconTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="itab1-tab" data-bs-toggle="tab" data-bs-target="#itab1" type="button" role="tab" aria-controls="itab1" aria-selected="true">
+                                        <i class="fas fa-home"></i>
+                                        <span>হোম</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="itab2-tab" data-bs-toggle="tab" data-bs-target="#itab2" type="button" role="tab" aria-controls="itab2" aria-selected="false">
+                                        <i class="fas fa-user"></i>
+                                        <span>প্রোফাইল</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="itab3-tab" data-bs-toggle="tab" data-bs-target="#itab3" type="button" role="tab" aria-controls="itab3" aria-selected="false">
+                                        <i class="fas fa-cog"></i>
+                                        <span>সেটিংস</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="itab4-tab" data-bs-toggle="tab" data-bs-target="#itab4" type="button" role="tab" aria-controls="itab4" aria-selected="false">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>তথ্য</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="itab1" role="tabpanel" aria-labelledby="itab1-tab">
+                                    <h5><i class="fas fa-home me-2"></i> হোম পেজ</h5>
+                                    <p>আইকন সহ ট্যাব ব্যবহার করে UI আরও আকর্ষণীয় এবং ব্যবহারকারী-বান্ধব করা যায়।</p>
+                                </div>
+                                <div class="tab-pane fade" id="itab2" role="tabpanel" aria-labelledby="itab2-tab">
+                                    <h5><i class="fas fa-user me-2"></i> ব্যবহারকারী প্রোফাইল</h5>
+                                    <p>প্রোফাইল তথ্য দেখুন এবং সম্পাদনা করুন।</p>
+                                </div>
+                                <div class="tab-pane fade" id="itab3" role="tabpanel" aria-labelledby="itab3-tab">
+                                    <h5><i class="fas fa-cog me-2"></i> সিস্টেম সেটিংস</h5>
+                                    <p>সিস্টেমের বিভিন্ন সেটিংস পরিবর্তন করুন।</p>
+                                </div>
+                                <div class="tab-pane fade" id="itab4" role="tabpanel" aria-labelledby="itab4-tab">
+                                    <h5><i class="fas fa-info-circle me-2"></i> তথ্য ও সাহায্য</h5>
+                                    <p>সিস্টেম সম্পর্কে বিস্তারিত তথ্য এবং সাহায্য পেতে এখানে দেখুন।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="design-card">
+                        <h4>ভার্টিকাল ট্যাব <span class="badge-custom">Vertical</span></h4>
+                        <p>উল্লম্বভাবে সাজানো ট্যাব ডিজাইন।</p>
+                        
+                        <div class="demo-area">
+                            <div class="vertical-tabs">
+                                <ul class="nav flex-column nav-tabs" id="verticalTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="vtab1-tab" data-bs-toggle="tab" data-bs-target="#vtab1" type="button" role="tab" aria-controls="vtab1" aria-selected="true">প্রোডাক্ট</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="vtab2-tab" data-bs-toggle="tab" data-bs-target="#vtab2" type="button" role="tab" aria-controls="vtab2" aria-selected="false">অর্ডার</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="vtab3-tab" data-bs-toggle="tab" data-bs-target="#vtab3" type="button" role="tab" aria-controls="vtab3" aria-selected="false">কাস্টমার</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="vtab4-tab" data-bs-toggle="tab" data-bs-target="#vtab4" type="button" role="tab" aria-controls="vtab4" aria-selected="false">রিপোর্ট</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content flex-grow-1">
+                                    <div class="tab-pane fade show active" id="vtab1" role="tabpanel" aria-labelledby="vtab1-tab">
+                                        <h5>প্রোডাক্ট ম্যানেজমেন্ট</h5>
+                                        <p>এখানে আপনি আপনার সকল প্রোডাক্ট দেখতে এবং ম্যানেজ করতে পারবেন।</p>
+                                        <ul>
+                                            <li>নতুন প্রোডাক্ট যোগ করুন</li>
+                                            <li>প্রোডাক্ট এডিট করুন</li>
+                                            <li>স্টক আপডেট করুন</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane fade" id="vtab2" role="tabpanel" aria-labelledby="vtab2-tab">
+                                        <h5>অর্ডার ম্যানেজমেন্ট</h5>
+                                        <p>গ্রাহকদের অর্ডার দেখুন এবং ম্যানেজ করুন।</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="vtab3" role="tabpanel" aria-labelledby="vtab3-tab">
+                                        <h5>কাস্টমার ম্যানেজমেন্ট</h5>
+                                        <p>গ্রাহকদের তথ্য দেখুন এবং ম্যানেজ করুন।</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="vtab4" role="tabpanel" aria-labelledby="vtab4-tab">
+                                        <h5>রিপোর্ট ও এনালাইটিক্স</h5>
+                                        <p>বিভিন্ন রিপোর্ট এবং এনালাইটিক্স দেখুন।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pagination Designs -->
+        <section>
+            <h2 class="section-title">4. পেজিনেশন ডিজাইন</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="design-card">
+                        <h4>বেসিক পেজিনেশন <span class="badge-custom">Default</span></h4>
+                        <p>Bootstrap 5 এর ডিফল্ট পেজিনেশন।</p>
+                        
+                        <div class="demo-area text-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                        <div class="code-block">
+&lt;nav aria-label="Page navigation example"&gt;
+    &lt;ul class="pagination justify-content-center"&gt;
+        &lt;li class="page-item"&gt;
+            &lt;a class="page-link" href="#" aria-label="Previous"&gt;
+                &lt;span aria-hidden="true"&gt;&laquo;&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="page-item active"&gt;&lt;a class="page-link" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="page-item"&gt;
+            &lt;a class="page-link" href="#" aria-label="Next"&gt;
+                &lt;span aria-hidden="true"&gt;&raquo;&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="design-card">
+                        <h4>রাউন্ডেড পেজিনেশন <span class="badge-custom">Custom</span></h4>
+                        <p>গোলাকার বোতাম সহ পেজিনেশন।</p>
+                        
+                        <div class="demo-area text-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination rounded-pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="design-card">
+                        <h4>আইকন পেজিনেশন <span class="badge-custom">Icons</span></h4>
+                        <p>আইকন সহ মিনিমালিস্ট পেজিনেশন।</p>
+                        
+                        <div class="demo-area text-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination icon-pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Combined Tabination Design -->
+        <section>
+            <h2 class="section-title">5. কম্বাইন্ড ট্যাবিনেশন</h2>
+            <div class="design-card">
+                <h4>ট্যাব + পেজিনেশন কম্বিনেশন <span class="badge-custom">Advanced</span></h4>
+                <p>ট্যাব এবং পেজিনেশন একসাথে ব্যবহার করার উদাহরণ।</p>
+                
+                <div class="demo-area">
+                    <div class="combined-tabination">
+                        <ul class="nav nav-tabs" id="combinedTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="ctab1-tab" data-bs-toggle="tab" data-bs-target="#ctab1" type="button" role="tab" aria-controls="ctab1" aria-selected="true">প্রোডাক্ট</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="ctab2-tab" data-bs-toggle="tab" data-bs-target="#ctab2" type="button" role="tab" aria-controls="ctab2" aria-selected="false">রিভিউ</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="ctab3-tab" data-bs-toggle="tab" data-bs-target="#ctab3" type="button" role="tab" aria-controls="ctab3" aria-selected="false">ডিটেইলস</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="ctab1" role="tabpanel" aria-labelledby="ctab1-tab">
+                                <h5>প্রোডাক্ট তালিকা</h5>
+                                <p>নিচের পেজিনেশন ব্যবহার করে প্রোডাক্টের পেজ পরিবর্তন করুন।</p>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>প্রোডাক্ট নাম</th>
+                                                <th>দাম</th>
+                                                <th>স্টক</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>ল্যাপটপ</td>
+                                                <td>৳৫৫,০০০</td>
+                                                <td>১৫</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>মোবাইল</td>
+                                                <td>৳২৫,০০০</td>
+                                                <td>৩০</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>ট্যাবলেট</td>
+                                                <td>৳১৮,০০০</td>
+                                                <td>২২</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="ctab2" role="tabpanel" aria-labelledby="ctab2-tab">
+                                <h5>গ্রাহক রিভিউ</h5>
+                                <p>বিভিন্ন গ্রাহকের রিভিউ পড়ুন।</p>
+                                <div class="alert alert-info">এই ট্যাবে রিভিউ তালিকা দেখানো হবে।</div>
+                            </div>
+                            <div class="tab-pane fade" id="ctab3" role="tabpanel" aria-labelledby="ctab3-tab">
+                                <h5>বিস্তারিত তথ্য</h5>
+                                <p>প্রোডাক্টের বিস্তারিত তথ্য ও বিবরণ।</p>
+                                <div class="alert alert-success">এই ট্যাবে বিস্তারিত তথ্য দেখানো হবে।</div>
+                            </div>
+                        </div>
+                        <div class="pagination-container">
+                            <nav aria-label="Combined pagination">
+                                <ul class="pagination custom-pagination justify-content-center mb-0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-block">
+&lt;!-- Combined Tabination Example --&gt;
+&lt;div class="combined-tabination"&gt;
+    &lt;!-- Tabs --&gt;
+    &lt;ul class="nav nav-tabs" id="combinedTab" role="tablist"&gt;
+        &lt;li class="nav-item"&gt;
+            &lt;button class="nav-link active" id="ctab1-tab" data-bs-toggle="tab" data-bs-target="#ctab1" type="button"&gt;প্রোডাক্ট&lt;/button&gt;
+        &lt;/li&gt;
+        &lt;!-- আরো ট্যাব --&gt;
+    &lt;/ul&gt;
+    
+    &lt;!-- Tab Content --&gt;
+    &lt;div class="tab-content"&gt;
+        &lt;div class="tab-pane fade show active" id="ctab1" role="tabpanel" aria-labelledby="ctab1-tab"&gt;
+            &lt;!-- কন্টেন্ট --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Pagination --&gt;
+    &lt;div class="pagination-container"&gt;
+        &lt;nav aria-label="Combined pagination"&gt;
+            &lt;ul class="pagination custom-pagination justify-content-center"&gt;
+                &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+                &lt;!-- আরো পেজ লিঙ্ক --&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Bootstrap 5 ব্যবহার করে তৈরি ট্যাবিনেশন ডিজাইন কালেকশন</p>
+            <p>সব ডিজাইন ফুলি রেসপনসিভ - মোবাইল, ট্যাবলেট এবং ডেস্কটপে দেখুন</p>
+            <p class="mt-2">
+                <button class="btn btn-sm btn-primary me-2"><i class="fas fa-code"></i> HTML</button>
+                <button class="btn btn-sm btn-success me-2"><i class="fas fa-css3"></i> CSS</button>
+                <button class="btn btn-sm btn-info"><i class="fab fa-bootstrap"></i> Bootstrap 5</button>
+            </p>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Activate all tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activate Bootstrap tooltips if needed
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Add click event to pagination items to prevent default behavior for demo
+            document.querySelectorAll('.page-link').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Remove active class from all pagination items
+                    this.closest('.pagination').querySelectorAll('.page-item').forEach(function(item) {
+                        item.classList.remove('active');
+                    });
+                    // Add active class to parent of clicked link
+                    this.closest('.page-item').classList.add('active');
+                });
+            });
+            
+            // Add active state to custom pagination on click
+            document.querySelectorAll('.custom-pagination .page-link').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Update active state
+                    document.querySelectorAll('.custom-pagination .page-item').forEach(function(item) {
+                        item.classList.remove('active');
+                    });
+                    this.closest('.page-item').classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

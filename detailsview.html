@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Cards - Bootstrap 5</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-light: #4895ef;
+            --secondary-color: #3f37c9;
+            --success-color: #4cc9f0;
+            --warning-color: #f72585;
+            --dark-color: #2b2d42;
+            --light-color: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 30px 15px;
+        }
+        
+        .container-custom {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+        }
+        
+        .header-title h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--warning-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header-title p {
+            color: #6c757d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Card Styles */
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            margin-bottom: 30px;
+            border: none;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 25px 25px 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: transparent;
+            border: none;
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .icon-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        }
+        
+        .icon-success {
+            background: linear-gradient(135deg, var(--success-color), #4cc9f0);
+        }
+        
+        .icon-warning {
+            background: linear-gradient(135deg, var(--warning-color), #f72585);
+        }
+        
+        .icon-dark {
+            background: linear-gradient(135deg, var(--dark-color), #2b2d42);
+        }
+        
+        .icon-secondary {
+            background: linear-gradient(135deg, var(--secondary-color), #3f37c9);
+        }
+        
+        .card-header h4 {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+        
+        .card-header p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .card-body {
+            padding: 20px 25px 25px;
+        }
+        
+        /* User Profile Card */
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .user-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        .user-title {
+            color: var(--primary-color);
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .user-bio {
+            color: #6c757d;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .user-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        /* Contact Info Card */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .contact-info h6 {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+        
+        .contact-info p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Skills Card */
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .skill-percent {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .skill-progress {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #e9ecef;
+            overflow: hidden;
+        }
+        
+        .skill-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Education Card */
+        .edu-item {
+            display: flex;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .edu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        .edu-year {
+            width: 80px;
+            flex-shrink: 0;
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        
+        .edu-details h6 {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .edu-details p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Social Links Card */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+        }
+        
+        .social-facebook {
+            background: linear-gradient(135deg, #3b5998, #8b9dc3);
+        }
+        
+        .social-twitter {
+            background: linear-gradient(135deg, #1da1f2, #71c9f8);
+        }
+        
+        .social-linkedin {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+        
+        .social-instagram {
+            background: linear-gradient(135deg, #c13584, #e1306c, #fd1d1d, #f56040, #ffdc80);
+        }
+        
+        .social-github {
+            background: linear-gradient(135deg, #333, #6e5494);
+        }
+        
+        .social-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+        
+        .social-text {
+            text-align: center;
+            margin-top: 15px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        /* Stats Card */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-box {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            background-color: rgba(67, 97, 238, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .stat-box-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .stat-box-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-box-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .container-custom {
+                max-width: 960px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .header-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-header {
+                padding: 20px 20px 15px;
+            }
+            
+            .card-body {
+                padding: 15px 20px 20px;
+            }
+            
+            .user-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .social-links {
+                gap: 10px;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .header-title h1 {
+                font-size: 1.6rem;
+            }
+            
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            .user-avatar {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .edu-item {
+                flex-direction: column;
+            }
+            
+            .edu-year {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        /* Animation for cards on load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .info-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .info-card:nth-child(1) { animation-delay: 0.1s; }
+        .info-card:nth-child(2) { animation-delay: 0.2s; }
+        .info-card:nth-child(3) { animation-delay: 0.3s; }
+        .info-card:nth-child(4) { animation-delay: 0.4s; }
+        .info-card:nth-child(5) { animation-delay: 0.5s; }
+        .info-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container-custom">
+        <!-- Header -->
+        <div class="header-title">
+            <h1>User Information Dashboard</h1>
+            <p>View and manage user information with these responsive cards</p>
+        </div>
+        
+        <div class="row">
+            <!-- Card 1: User Profile -->
+            <div class="col-lg-4 col-md-6">
+                <div class="info-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-primary">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h4>User Profile</h4>
+                        <p>Personal information & details</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="User Avatar">
+                        </div>
+                        <h3 class="user-name">Alex Johnson</h3>
+                        <p class="user-title">Senior UI/UX Designer</p>
+                        <p class="user-bio">Creative designer with 8+ years of experience in creating beautiful and functional user interfaces.</p>
+                        
+                        <div class="user-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">342</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2.5K</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">124</span>
+                                <span class="stat-label">Following</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2: Contact Information -->
+            <div class="col-lg-4 col-md-6">
+                <div class="info-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-success">
+                            <i class="fas fa-address-card"></i>
+                        </div>
+                        <h4>Contact Information</h4>
+                        <p>Ways to get in touch</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-item">
+                            <div class="contact-icon icon-primary">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h6>Email Address</h6>
+                                <p>alex.johnson@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon icon-success">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h6>Phone Number</h6>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon icon-warning">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h6>Location</h6>
+                                <p>San Francisco, California, USA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon icon-dark">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h6>Website</h6>
+                                <p>www.alexjohnson.design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3: Skills & Expertise -->
+            <div class="col-lg-4 col-md-6">
+                <div class="info-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-warning">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Skills & Expertise</h4>
+                        <p>Technical abilities & proficiencies</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Frontend Development</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Product Strategy</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">User Research</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4: Education & Experience -->
+            <div class="col-lg-4 col-md-6">
+                <div class="info-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-dark">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Education & Experience</h4>
+                        <p>Academic & professional background</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="edu-item">
+                            <div class="edu-year">2020-Present</div>
+                            <div class="edu-details">
+                                <h6>Lead UI/UX Designer</h6>
+                                <p>TechCorp Inc., San Francisco</p>
+                            </div>
+                        </div>
+                        
+                        <div class="edu-item">
+                            <div class="edu-year">2017-2020</div>
+                            <div class="edu-details">
+                                <h6>Senior Product Designer</h6>
+                                <p>DesignStudio LLC, New York</p>
+                            </div>
+                        </div>
+                        
+                        <div class="edu-item">
+                            <div class="edu-year">2015-2017</div>
+                            <div class="edu-details">
+                                <h6>UI Designer</h6>
+                                <p>CreativeMinds, Boston</p>
+                            </div>
+                        </div>
+                        
+                        <div class="edu-item">
+                            <div class="edu-year">2011-2015</div>
+                            <div class="edu-details">
+                                <h6>Master's in Computer Science</h6>
+                                <p>Stanford University</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 5: Social Links -->
+            <div class="col-lg-4 col-md-6">
+                <div class="info-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-secondary">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h4>Social Links</h4>
+                        <p>Connect on social platforms</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="social-links">
+                            <a href="#" class="social-link social-facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link social-twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link social-linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link social-instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link social-github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link social-whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <p class="social-text">Connect with me on social media for updates and collaboration opportunities.</p>
+                        
+                        <div class="mt-4">
+                            <h6>Preferred Contact Method:</h6>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="radio" name="contactMethod" id="emailRadio" checked>
+                                <label class="form-check-label" for="emailRadio">
+                                    Email
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contactMethod" id="phoneRadio">
+                                <label class="form-check-label" for="phoneRadio">
+                                    Phone Call
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contactMethod" id="messageRadio">
+                                <label class="form-check-label" for="messageRadio">
+                                    Messaging App
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 6: Quick Stats -->
+            <div class="col-lg-4 col-md-6">
+                <div class="info-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-primary">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Quick Stats</h4>
+                        <p>Performance metrics & analytics</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-box-icon icon-primary">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <span class="stat-box-value">342</span>
+                                <span class="stat-box-label">Total Projects</span>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <div class="stat-box-icon icon-success">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <span class="stat-box-value">89%</span>
+                                <span class="stat-box-label">Completion Rate</span>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <div class="stat-box-icon icon-warning">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span class="stat-box-value">24h</span>
+                                <span class="stat-box-label">Avg Response Time</span>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <div class="stat-box-icon icon-dark">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="stat-box-value">4.9</span>
+                                <span class="stat-box-label">Client Rating</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h6>Activity This Month:</h6>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span>Projects Completed</span>
+                                <span class="fw-bold text-primary">12</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span>Meetings Attended</span>
+                                <span class="fw-bold text-primary">8</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span>Tasks Pending</span>
+                                <span class="fw-bold text-warning">5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Add hover effect to social links
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Add click effect to stat boxes
+        document.querySelectorAll('.stat-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const value = this.querySelector('.stat-box-value').textContent;
+                const label = this.querySelector('.stat-box-label').textContent;
+                alert(`Stat: ${value} ${label}`);
+            });
+        });
+        
+        // Animation for progress bars on scroll
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.skill-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s ease-in-out';
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+        
+        // Run animation when page loads
+        window.addEventListener('load', animateProgressBars);
+        
+        // Add some interactivity to cards
+        document.querySelectorAll('.info-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking on interactive elements
+                if (!e.target.closest('a') && !e.target.closest('input')) {
+                    const cardTitle = this.querySelector('.card-header h4').textContent;
+                    console.log(`Card clicked: ${cardTitle}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

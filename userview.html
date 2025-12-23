@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salina Imam Belay - Agent Profile</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --primary-light: #6a8cff;
+            --secondary-color: #f8a130;
+            --dark-color: #2d3748;
+            --light-color: #f8f9fa;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --gray-color: #6b7280;
+            --border-color: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--dark-color);
+        }
+        
+        .agent-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Header Section */
+        .agent-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 35px 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .agent-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.05);
+            transform: rotate(30deg);
+        }
+        
+        .agent-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .agent-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .agent-title {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            font-size: 16px;
+        }
+        
+        /* Content Section */
+        .agent-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--light-color);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .info-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Table Style Info */
+        .table-info {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .table-info tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .table-info tr:last-child {
+            border-bottom: none;
+        }
+        
+        .table-info td {
+            padding: 15px 0;
+        }
+        
+        .table-info td:first-child {
+            font-weight: 500;
+            color: var(--gray-color);
+            width: 40%;
+        }
+        
+        .table-info td:last-child {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Balance Highlight */
+        .balance-container {
+            background: linear-gradient(135deg, #f0f7ff, #e6f0ff);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid rgba(74, 108, 247, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .balance-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(74, 108, 247, 0.1), transparent);
+            border-radius: 0 15px 0 100%;
+        }
+        
+        .balance-label {
+            font-size: 14px;
+            color: var(--gray-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .balance-label i {
+            color: var(--primary-color);
+        }
+        
+        .balance-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        
+        .balance-currency {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-left: 5px;
+        }
+        
+        /* Status Badges */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .status-yes {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--success-color);
+        }
+        
+        .status-no {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--danger-color);
+        }
+        
+        /* Footer Section */
+        .agent-footer {
+            background: var(--light-color);
+            padding: 25px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .agent-id {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .id-label {
+            font-weight: 500;
+            color: var(--gray-color);
+        }
+        
+        .id-value {
+            font-weight: 600;
+            color: var(--dark-color);
+            background: white;
+            padding: 6px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn-action {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(74, 108, 247, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .agent-content {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+            
+            .agent-header {
+                padding: 30px 30px 25px;
+            }
+            
+            .agent-name {
+                font-size: 1.9rem;
+            }
+            
+            .balance-amount {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .agent-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .action-buttons {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .btn-action {
+                flex: 1;
+                justify-content: center;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding: 15px;
+            }
+            
+            .agent-header, .agent-content, .agent-footer {
+                padding: 25px 20px;
+            }
+            
+            .agent-name {
+                font-size: 1.7rem;
+            }
+            
+            .agent-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+            
+            .balance-amount {
+                font-size: 1.9rem;
+            }
+            
+            .table-info td {
+                display: block;
+                padding: 10px 0;
+                width: 100%;
+            }
+            
+            .table-info td:first-child {
+                width: 100%;
+                padding-bottom: 5px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .agent-card {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        /* Country Flag Styling */
+        .country-flag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .flag-icon {
+            width: 24px;
+            height: 18px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flag-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="agent-card">
+        <!-- Header Section -->
+        <div class="agent-header">
+            <div class="agent-badge">
+                <i class="fas fa-user-tie me-1"></i> Internal Agent
+            </div>
+            
+            <h1 class="agent-name">Salina Imam Belay</h1>
+            <p class="agent-title">Agent Profile & Information</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">salinaimambelay@gmail.com</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">+250 791 959 073</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="agent-content">
+            <div class="left-section">
+                <h3 class="section-title">Personal Information</h3>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-value">01 January 1991</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Postal Code</span>
+                        <span class="info-value">17 KG 8</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Agent Code</span>
+                        <span class="info-value">AFGSJB1</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Commission Change</span>
+                        <div>
+                            <span class="status-badge status-no">No</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="balance-container">
+                    <div class="balance-label">
+                        <i class="fas fa-wallet"></i> Current Balance
+                    </div>
+                    <div class="balance-amount">
+                        $1,872.98
+                        <span class="balance-currency">USD</span>
+                    </div>
+                    <div style="font-size: 14px; color: var(--gray-color); margin-top: 8px;">
+                        Exact: $1,872.9847497989
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <h3 class="section-title">Location Details</h3>
+                
+                <table class="table-info">
+                    <tr>
+                        <td>Country</td>
+                        <td>
+                            <div class="country-flag">
+                                <div class="flag-icon">
+                                    <!-- Rwanda flag colors -->
+                                    <div style="width:100%;height:100%;background:linear-gradient(to bottom, #00A1DE 33%, #FAD201 33%, #FAD201 66%, #20603D 66%);"></div>
+                                </div>
+                                <span>Rwanda</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>Kigali</td>
+                    </tr>
+                    <tr>
+                        <td>Street Address</td>
+                        <td>17 KG 8</td>
+                    </tr>
+                </table>
+                
+                <div style="margin-top: 30px;">
+                    <h3 class="section-title">Additional Details</h3>
+                    <table class="table-info">
+                        <tr>
+                            <td>Agent Type</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-tie me-2 text-primary"></i>
+                                    <span>Internal Agent</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Account Status</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div style="width: 10px; height: 10px; background-color: var(--success-color); border-radius: 50%; margin-right: 8px;"></div>
+                                    <span>Active</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Member Since</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-calendar-alt me-2 text-primary"></i>
+                                    <span>January 2018</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Section -->
+        <div class="agent-footer">
+            <div class="agent-id">
+                <span class="id-label">Agent ID:</span>
+                <span class="id-value">AFGSJB1-250791959073</span>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-action btn-outline">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+                <button class="btn-action btn-primary">
+                    <i class="fas fa-download"></i> Export Data
+                </button>
+                <button class="btn-action btn-primary">
+                    <i class="fas fa-print"></i> Print
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Add interactivity to the card
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effect to info items
+            const infoItems = document.querySelectorAll('.info-item');
+            infoItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.08)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Button click events
+            const buttons = document.querySelectorAll('.btn-action');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent.trim();
+                    
+                    // Simulate different actions based on button
+                    if (buttonText.includes('Edit')) {
+                        alert('Edit Profile feature would open here');
+                    } else if (buttonText.includes('Export')) {
+                        alert('Exporting agent data...');
+                    } else if (buttonText.includes('Print')) {
+                        window.print();
+                    }
+                });
+            });
+            
+            // Balance formatting on hover
+            const balanceContainer = document.querySelector('.balance-container');
+            const balanceAmount = document.querySelector('.balance-amount');
+            const exactBalance = document.querySelector('.balance-container div:nth-child(3)');
+            
+            balanceContainer.addEventListener('mouseenter', function() {
+                balanceAmount.style.opacity = '0.7';
+                exactBalance.style.fontWeight = '600';
+                exactBalance.style.color = 'var(--primary-color)';
+            });
+            
+            balanceContainer.addEventListener('mouseleave', function() {
+                balanceAmount.style.opacity = '1';
+                exactBalance.style.fontWeight = 'normal';
+                exactBalance.style.color = 'var(--gray-color)';
+            });
+            
+            // Show tooltip for agent code
+            const agentCode = document.querySelector('.info-item:nth-child(3) .info-value');
+            agentCode.title = "Unique Agent Identifier: AFGSJB1";
+            
+            // Add animation to status badge
+            const statusBadge = document.querySelector('.status-badge');
+            setInterval(() => {
+                statusBadge.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    statusBadge.style.transform = 'scale(1)';
+                }, 300);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
