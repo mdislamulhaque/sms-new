@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Responsive Modals</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --success-color: #2ec4b6;
+            --warning-color: #ff9f1c;
+            --danger-color: #e71d36;
+            --info-color: #8338ec;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #f8f9fa;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #3a0ca3);
+            color: white;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .modal-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .modal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .modal-card .card-header {
+            font-weight: 600;
+            padding: 1.25rem 1rem;
+        }
+        
+        .btn-modal {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .modal-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-lg-custom {
+            max-width: 800px;
+        }
+        
+        .modal-xl-custom {
+            max-width: 1140px;
+        }
+        
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .modal-header {
+            border-radius: 12px 12px 0 0;
+            padding: 1.5rem 2rem;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .modal-footer {
+            padding: 1.5rem 2rem;
+        }
+        
+        /* Custom modal colors */
+        .modal-primary .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .modal-success .modal-header {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .modal-warning .modal-header {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .modal-danger .modal-header {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .modal-info .modal-header {
+            background-color: var(--info-color);
+            color: white;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .modal-header, .modal-body, .modal-footer {
+                padding: 1.25rem;
+            }
+            
+            .btn-modal {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .modal-body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .modal-lg-custom, .modal-xl-custom {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="header text-center">
+            <h1 class="display-5 fw-bold">Bootstrap 5 Responsive Modals</h1>
+            <p class="lead mt-3">Five different responsive modal examples using Bootstrap 5</p>
+            <p class="mb-0">Each modal is fully responsive and works on all device sizes</p>
+        </div>
+        
+        <div class="row text-center mb-5">
+            <div class="col-md-10 mx-auto">
+                <p class="text-muted">Click on any of the buttons below to open a responsive modal. These modals will adjust their layout and size based on your screen width.</p>
+            </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+            <!-- Modal 1 Card -->
+            <div class="col">
+                <div class="modal-card card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Standard Modal</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="modal-icon text-primary">
+                            <i class="bi bi-window"></i>
+                        </div>
+                        <h5 class="card-title">Standard Dialog</h5>
+                        <p class="card-text">A basic responsive modal with header, body and footer sections. Adapts to all screen sizes.</p>
+                        <button type="button" class="btn btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#standardModal">
+                            Open Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal 2 Card -->
+            <div class="col">
+                <div class="modal-card card shadow-sm border-0">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Large Modal</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="modal-icon text-success">
+                            <i class="bi bi-aspect-ratio"></i>
+                        </div>
+                        <h5 class="card-title">Large Size Modal</h5>
+                        <p class="card-text">A larger modal that takes more screen space on desktop but remains responsive on mobile.</p>
+                        <button type="button" class="btn btn-success btn-modal" data-bs-toggle="modal" data-bs-target="#largeModal">
+                            Open Large Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal 3 Card -->
+            <div class="col">
+                <div class="modal-card card shadow-sm border-0">
+                    <div class="card-header bg-warning text-white">
+                        <h5 class="mb-0">Scrollable Modal</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="modal-icon text-warning">
+                            <i class="bi bi-mouse2"></i>
+                        </div>
+                        <h5 class="card-title">Scrollable Content</h5>
+                        <p class="card-text">Modal with scrollable content area when content exceeds available height. Perfect for long forms.</p>
+                        <button type="button" class="btn btn-warning btn-modal" data-bs-toggle="modal" data-bs-target="#scrollableModal">
+                            Open Scrollable Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal 4 Card -->
+            <div class="col">
+                <div class="modal-card card shadow-sm border-0">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0">Form Modal</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="modal-icon text-danger">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+                        <h5 class="card-title">Modal with Form</h5>
+                        <p class="card-text">A responsive modal containing a form with various input types. Form adjusts to screen size.</p>
+                        <button type="button" class="btn btn-danger btn-modal" data-bs-toggle="modal" data-bs-target="#formModal">
+                            Open Form Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal 5 Card -->
+            <div class="col">
+                <div class="modal-card card shadow-sm border-0">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Extra Large Modal</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="modal-icon text-info">
+                            <i class="bi bi-fullscreen"></i>
+                        </div>
+                        <h5 class="card-title">Full-width Modal</h5>
+                        <p class="card-text">An extra large modal that takes most of the screen width on desktop. Fully responsive on mobile.</p>
+                        <button type="button" class="btn btn-info btn-modal" data-bs-toggle="modal" data-bs-target="#extraLargeModal">
+                            Open XL Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bonus Modal Card -->
+            <div class="col">
+                <div class="modal-card card shadow-sm border-0">
+                    <div class="card-header" style="background-color: #6c757d; color: white;">
+                        <h5 class="mb-0">Centered Modal</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="modal-icon" style="color: #6c757d;">
+                            <i class="bi bi-align-center"></i>
+                        </div>
+                        <h5 class="card-title">Vertically Centered</h5>
+                        <p class="card-text">A modal that's vertically centered on the screen. Useful for attention-grabbing messages.</p>
+                        <button type="button" class="btn btn-secondary btn-modal" data-bs-toggle="modal" data-bs-target="#centeredModal">
+                            Open Centered Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Responsive Modals Features</h5>
+                        <p class="card-text">These modals demonstrate Bootstrap 5's responsive features:</p>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="bi bi-check-circle-fill"></i> Automatically adjusts size based on screen width</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Mobile-friendly touch interactions</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Accessible with proper ARIA attributes</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Smooth animations and transitions</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Backdrop click to close functionality</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Keyboard navigation support (ESC to close)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1: Standard Modal -->
+    <div class="modal fade" id="standardModal" tabindex="-1" aria-labelledby="standardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-primary">
+                    <h5 class="modal-title" id="standardModalLabel">Standard Responsive Modal</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is a standard Bootstrap 5 modal. It will automatically adjust its width based on the screen size.</p>
+                    <p>On mobile devices, it will take up most of the screen width with small margins on the sides.</p>
+                    <p>On tablets and desktop screens, it will have a fixed maximum width.</p>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-info-circle me-2"></i>
+                        <strong>Responsive Tip:</strong> Resize your browser window to see how this modal adapts to different screen sizes.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Large Modal -->
+    <div class="modal fade" id="largeModal" tabindex="-1" aria-labelledby="largeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-lg-custom">
+            <div class="modal-content">
+                <div class="modal-header modal-success">
+                    <h5 class="modal-title" id="largeModalLabel">Large Responsive Modal</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Large Modal Example</h5>
+                    <p>This modal uses the <code>.modal-lg</code> class to make it wider than the default modal.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light p-3 h-100">
+                                <h6>Feature 1</h6>
+                                <p>Even in large modals, content remains responsive. Columns will stack on mobile devices.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light p-3 h-100">
+                                <h6>Feature 2</h6>
+                                <p>On smaller screens, this modal will still be usable with proper padding and spacing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p>Notice how this modal is wider on desktop screens but adapts to smaller screens appropriately.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Scrollable Modal -->
+    <div class="modal fade" id="scrollableModal" tabindex="-1" aria-labelledby="scrollableModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header modal-warning">
+                    <h5 class="modal-title" id="scrollableModalLabel">Scrollable Responsive Modal</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Long Content Area</h5>
+                    <p>This modal has scrollable content. When the content exceeds the modal height, it becomes scrollable.</p>
+                    
+                    <div class="mb-4">
+                        <h6>Section 1: Introduction</h6>
+                        <p>Scrollable modals are perfect for content that may be too long for a standard modal window.</p>
+                        <p>On mobile devices, this allows users to scroll through content without the modal becoming too tall.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6>Section 2: Responsive Behavior</h6>
+                        <p>The scrollable area automatically adjusts based on screen height. On taller screens, you'll see more content before scrolling.</p>
+                        <p>On shorter mobile screens, the scrollable area will be smaller to ensure the modal fits on screen.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6>Section 3: Usage Examples</h6>
+                        <ul>
+                            <li>Terms and conditions documents</li>
+                            <li>Long forms with many fields</li>
+                            <li>Detailed product descriptions</li>
+                            <li>Article previews</li>
+                            <li>Settings panels with many options</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6>Section 4: Implementation</h6>
+                        <p>To create a scrollable modal, add the <code>.modal-dialog-scrollable</code> class to the modal dialog element.</p>
+                        <p>This makes only the modal body scrollable while keeping the header and footer fixed.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6>Section 5: Accessibility</h6>
+                        <p>Scrollable modals maintain keyboard accessibility. Users can tab through focusable elements and use arrow keys to scroll.</p>
+                        <p>The scrollbar appearance adapts to different operating systems and devices.</p>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        <strong>Note:</strong> You've reached the end of the scrollable content. This modal demonstrates how long content can be handled responsively.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Accept Terms</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Form Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-danger">
+                    <h5 class="modal-title" id="formModalLabel">Responsive Form Modal</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Fill out the form below. All form elements are responsive and will adjust to different screen sizes.</p>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label for="nameInput" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phoneInput" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneInput" placeholder="(123) 456-7890">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="countrySelect" class="form-label">Country</label>
+                                <select class="form-select" id="countrySelect">
+                                    <option selected>Select a country</option>
+                                    <option value="1">United States</option>
+                                    <option value="2">Canada</option>
+                                    <option value="3">United Kingdom</option>
+                                    <option value="4">Australia</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="messageTextarea" class="form-label">Message</label>
+                            <textarea class="form-control" id="messageTextarea" rows="3" placeholder="Type your message here"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="termsCheck">
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the terms and conditions
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-info">
+                            <small><i class="bi bi-lightbulb me-1"></i> On mobile devices, form elements will stack vertically and use the full width available.</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger">Submit Form</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Extra Large Modal -->
+    <div class="modal fade" id="extraLargeModal" tabindex="-1" aria-labelledby="extraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-xl-custom">
+            <div class="modal-content">
+                <div class="modal-header modal-info">
+                    <h5 class="modal-title" id="extraLargeModalLabel">Extra Large Responsive Modal</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Extra Large Modal Example</h4>
+                    <p class="lead">This modal uses the <code>.modal-xl</code> class to make it extra large on desktop screens.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Feature One</h5>
+                                    <p class="card-text">Even in extra large modals, the grid system remains responsive. Columns will rearrange based on screen size.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Feature Two</h5>
+                                    <p class="card-text">On mobile screens, these cards will stack vertically to ensure readability and usability.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Feature Three</h5>
+                                    <p class="card-text">This wider column will take full width on tablets and mobile devices for better layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p>Extra large modals are perfect for:</p>
+                        <ul>
+                            <li>Dashboard-style content with multiple widgets</li>
+                            <li>Product comparison tables</li>
+                            <li>Image galleries with side-by-side previews</li>
+                            <li>Complex data visualizations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info">Explore More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bonus Modal: Centered Modal -->
+    <div class="modal fade" id="centeredModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #6c757d; color: white;">
+                    <h5 class="modal-title" id="centeredModalLabel">Vertically Centered Modal</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-4">
+                        <i class="bi bi-check-circle" style="font-size: 3rem; color: #6c757d;"></i>
+                    </div>
+                    <h4>Action Successful!</h4>
+                    <p>This modal is vertically centered on the screen using the <code>.modal-dialog-centered</code> class.</p>
+                    <p>On mobile devices, it will still be centered but will have appropriate margins on all sides.</p>
+                    <div class="alert alert-light mt-3">
+                        <small>Centered modals are great for confirmation dialogs, success messages, and important alerts.</small>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark">Next Step</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Simple script to log modal events
+        document.addEventListener('DOMContentLoaded', function() {
+            var modals = document.querySelectorAll('.modal');
+            
+            modals.forEach(function(modal) {
+                modal.addEventListener('shown.bs.modal', function() {
+                    console.log('Modal opened: ' + this.id);
+                });
+                
+                modal.addEventListener('hidden.bs.modal', function() {
+                    console.log('Modal closed: ' + this.id);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
